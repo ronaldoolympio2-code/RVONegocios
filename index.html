@@ -15,7 +15,7 @@
 }
 
 body {
-    background: #0b1120;
+    background: linear-gradient(120deg, #0b1120, #1f2a44);
     color: #e5e7eb;
     font-family: 'Inter', sans-serif;
     display: flex;
@@ -23,50 +23,18 @@ body {
     justify-content: center;
     height: 100vh;
     padding: 20px;
-    position: relative;
-    overflow: hidden;
 }
 
-/* 🔥 MARCA D’ÁGUA PREMIUM (SEM FUNDO) */
-body::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-
-    -webkit-mask-image: url("./RVO LOGO.png");
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-position: center;
-    -webkit-mask-size: 850px;
-
-    mask-image: url("./RVO LOGO.png");
-    mask-repeat: no-repeat;
-    mask-position: center;
-    mask-size: 850px;
-
-    background-color: rgba(255, 255, 255, 0.08);
-
-    z-index: 0;
-}
-
-/* OVERLAY PROFISSIONAL */
-body::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        120deg,
-        rgba(11,17,32,0.95) 30%,
-        rgba(11,17,32,0.75) 100%
-    );
-    z-index: 1;
-}
-
-/* CONTEÚDO */
+/* CONTAINER */
 .container {
-    position: relative;
-    z-index: 2;
     max-width: 750px;
     text-align: center;
+}
+
+/* LOGO */
+.logo {
+    width: 260px;
+    margin-bottom: 30px;
 }
 
 /* TÍTULO */
@@ -76,7 +44,6 @@ h1 {
     font-weight: 700;
     color: #ffffff;
     margin-bottom: 10px;
-    letter-spacing: 1px;
 }
 
 /* SUBTÍTULO */
@@ -154,6 +121,9 @@ h1 {
 <body>
 
 <div class="container">
+
+    <!-- SUA LOGO AQUI -->
+    <img src="RVO LOGO.png" alt="RVO Negócios" class="logo">
 
     <h1>Aguarde</h1>
 
