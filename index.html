@@ -23,18 +23,23 @@ body {
     justify-content: center;
     height: 100vh;
     padding: 20px;
+    overflow: hidden;
 }
 
 /* CONTAINER */
 .container {
     max-width: 750px;
     text-align: center;
+    animation: fadeUp 1.2s ease forwards;
+    opacity: 0;
 }
 
 /* LOGO */
 .logo {
     width: 260px;
     margin-bottom: 115px;
+    animation: logoFade 1.5s ease forwards, glow 3s ease-in-out infinite;
+    opacity: 0;
 }
 
 /* TÍTULO */
@@ -44,6 +49,7 @@ h1 {
     font-weight: 700;
     color: #ffffff;
     margin-bottom: 10px;
+    letter-spacing: 1px;
 }
 
 /* SUBTÍTULO */
@@ -59,6 +65,7 @@ h1 {
     height: 2px;
     background: linear-gradient(to right, transparent, #c9a961, transparent);
     margin: 25px auto;
+    animation: expand 1.5s ease forwards;
 }
 
 /* TEXTO */
@@ -82,19 +89,20 @@ h1 {
     border-radius: 4px;
     text-decoration: none;
     font-weight: 500;
-    transition: 0.3s;
+    transition: all 0.3s ease;
 }
 
 /* BOTÃO PRINCIPAL */
 .btn-primary {
     background: #c9a961;
     color: #0b1120;
-    box-shadow: 0 0 20px rgba(201,169,97,0.3);
+    box-shadow: 0 0 20px rgba(201,169,97,0.25);
 }
 
 .btn-primary:hover {
     background: #d4b46a;
-    transform: translateY(-2px);
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 10px 30px rgba(201,169,97,0.4);
 }
 
 /* BOTÃO SECUNDÁRIO */
@@ -106,6 +114,7 @@ h1 {
 .btn-outline:hover {
     background: #c9a961;
     color: #0b1120;
+    transform: translateY(-3px);
 }
 
 /* RODAPÉ */
@@ -113,6 +122,54 @@ h1 {
     margin-top: 50px;
     font-size: 13px;
     color: #6b7280;
+}
+
+/* ANIMAÇÕES */
+
+/* Entrada geral */
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Logo aparece primeiro */
+@keyframes logoFade {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Glow dourado leve */
+@keyframes glow {
+    0%, 100% {
+        filter: drop-shadow(0 0 5px rgba(201,169,97,0.2));
+    }
+    50% {
+        filter: drop-shadow(0 0 18px rgba(201,169,97,0.5));
+    }
+}
+
+/* Linha dourada expandindo */
+@keyframes expand {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+    100% {
+        width: 100px;
+        opacity: 1;
+    }
 }
 </style>
 
@@ -122,7 +179,7 @@ h1 {
 
 <div class="container">
 
-    <!-- SUA LOGO AQUI -->
+    <!-- IMPORTANTE: CONFIRA A EXTENSÃO AQUI -->
     <img src="rvo-logo.jpg" alt="RVO Negócios" class="logo">
 
     <h1>Aguarde</h1>
@@ -148,7 +205,7 @@ h1 {
     </div>
 
     <div class="footer">
-        © 2011 - RVO Negócios | Conectando oportunidades.  Gerando resultados.
+        © 2011 - RVO Negócios | Conectando oportunidades. Gerando resultados.
     </div>
 
 </div>
