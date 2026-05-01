@@ -15,7 +15,7 @@
 }
 
 body {
-    background: radial-gradient(circle at top, #1a2540, #0b1120 70%);
+    background: radial-gradient(circle at 20% 10%, #1f2a44, #0b1120 70%);
     color: #e5e7eb;
     font-family: 'Inter', sans-serif;
     display: flex;
@@ -26,34 +26,34 @@ body {
     overflow: hidden;
 }
 
-/* FUNDO COM MOVIMENTO ULTRA SUTIL */
+/* CAMADA DE LUZ DINÂMICA */
 body::before {
     content: "";
     position: absolute;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(201,169,97,0.06), transparent 60%);
-    animation: bgMove 18s linear infinite;
+    width: 180%;
+    height: 180%;
+    background: radial-gradient(circle, rgba(201,169,97,0.08), transparent 60%);
+    animation: lightMove 20s linear infinite;
 }
 
 /* CONTAINER */
 .container {
-    max-width: 760px;
+    max-width: 780px;
     width: 100%;
     text-align: center;
     position: relative;
     z-index: 2;
 }
 
-/* LOGO GRANDE (DOBRO COM CONTROLE) */
+/* LOGO PROTAGONISTA */
 .logo {
-    width: 420px;
-    max-width: 90%;
-    margin-bottom: 30px;
+    width: 440px;
+    max-width: 92%;
+    margin-bottom: 25px;
 
     opacity: 0;
-    transform: translateY(-20px) scale(0.96);
-    animation: logoEntrance 1.4s ease forwards, glow 4s ease-in-out infinite;
+    transform: translateY(-20px) scale(0.95);
+    animation: logoEntrance 1.5s ease forwards, logoLight 5s ease-in-out infinite;
 }
 
 /* TÍTULO */
@@ -61,15 +61,13 @@ h1 {
     font-family: 'Playfair Display', serif;
     font-size: 42px;
     color: #ffffff;
-    margin-bottom: 10px;
-    letter-spacing: 0.5px;
+    margin-bottom: 8px;
 
     opacity: 0;
     animation: fadeUp 1.2s ease forwards;
     animation-delay: 0.3s;
 }
 
-/* MICRO ANIMAÇÃO PREMIUM */
 h1 span {
     display: inline-block;
     animation: subtlePulse 3s ease-in-out infinite;
@@ -79,19 +77,19 @@ h1 span {
 .subtitle {
     font-size: 17px;
     color: #9ca3af;
-    margin-bottom: 25px;
+    margin-bottom: 22px;
 
     opacity: 0;
     animation: fadeUp 1.2s ease forwards;
     animation-delay: 0.5s;
 }
 
-/* LINHA */
+/* DIVISOR */
 .divider {
     width: 70px;
     height: 2px;
     background: linear-gradient(to right, transparent, #c9a961, transparent);
-    margin: 20px auto;
+    margin: 18px auto;
 
     opacity: 0;
     animation: fadeUp 1s ease forwards;
@@ -103,7 +101,7 @@ h1 span {
     font-size: 16.5px;
     line-height: 1.65;
     color: #d1d5db;
-    margin-bottom: 30px;
+    margin-bottom: 28px;
 
     opacity: 0;
     animation: fadeUp 1.2s ease forwards;
@@ -133,12 +131,12 @@ h1 span {
 .btn-primary {
     background: #c9a961;
     color: #0b1120;
-    box-shadow: 0 0 18px rgba(201,169,97,0.25);
+    box-shadow: 0 0 20px rgba(201,169,97,0.3);
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(201,169,97,0.4);
+    box-shadow: 0 12px 35px rgba(201,169,97,0.45);
 }
 
 .btn-outline {
@@ -151,15 +149,27 @@ h1 span {
     color: #0b1120;
 }
 
-/* FOOTER */
+/* ASSINATURA INSTITUCIONAL (RODAPÉ DESTACADO) */
 .footer {
-    margin-top: 40px;
-    font-size: 12.5px;
-    color: #6b7280;
+    margin-top: 28px;
+    font-size: 13.5px;
+    color: #c9a961;
+    letter-spacing: 0.4px;
 
     opacity: 0;
     animation: fadeUp 1.2s ease forwards;
     animation-delay: 1.3s;
+}
+
+/* LINHA SUPERIOR DO RODAPÉ */
+.footer::before {
+    content: "";
+    display: block;
+    width: 120px;
+    height: 1px;
+    margin: 0 auto 10px auto;
+    background: linear-gradient(to right, transparent, #c9a961, transparent);
+    opacity: 0.6;
 }
 
 /* ANIMAÇÕES */
@@ -182,18 +192,18 @@ h1 span {
     }
 }
 
-/* Glow refinado */
-@keyframes glow {
+/* LUZ PASSANDO NA LOGO */
+@keyframes logoLight {
     0%, 100% {
         filter: drop-shadow(0 0 6px rgba(201,169,97,0.2));
     }
     50% {
-        filter: drop-shadow(0 0 20px rgba(201,169,97,0.45));
+        filter: drop-shadow(0 0 28px rgba(201,169,97,0.55));
     }
 }
 
-/* Movimento de fundo */
-@keyframes bgMove {
+/* FUNDO EM MOVIMENTO */
+@keyframes lightMove {
     from {
         transform: translate(-10%, -10%);
     }
@@ -202,7 +212,7 @@ h1 span {
     }
 }
 
-/* Respiração do título */
+/* RESPIRAÇÃO DO TÍTULO */
 @keyframes subtlePulse {
     0%, 100% {
         opacity: 1;
@@ -215,11 +225,15 @@ h1 span {
 /* RESPONSIVO */
 @media (max-width: 600px) {
     .logo {
-        width: 260px;
+        width: 280px;
     }
 
     h1 {
         font-size: 32px;
+    }
+
+    .footer {
+        font-size: 12.5px;
     }
 }
 </style>
