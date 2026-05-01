@@ -22,7 +22,11 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
             scroll-behavior: smooth;
+            scroll-padding-top: 120px;
         }
 
         body {
@@ -34,7 +38,6 @@
             overflow-x: hidden;
         }
 
-        /* HEADER HARMONIZADO */
         header {
             position: fixed;
             top: 0;
@@ -95,7 +98,6 @@
             transform: translateY(-1px);
         }
 
-        /* HERO - O EQUILÍBRIO DO IMPACTO */
         .hero {
             height: 100vh;
             display: flex;
@@ -139,7 +141,6 @@
             letter-spacing: 0.5px;
         }
 
-        /* BOTÕES DE PRESTÍGIO */
         .btn {
             display: inline-block;
             padding: 20px 45px;
@@ -164,7 +165,6 @@
             filter: brightness(1.1);
         }
 
-        /* SEÇÕES COM RITMO VISUAL */
         section {
             padding: 160px 10%;
         }
@@ -199,7 +199,6 @@
             margin-bottom: 30px;
         }
 
-        /* GRID DE SERVIÇOS HARMONIZADO */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -242,7 +241,6 @@
             font-size: 26px;
         }
 
-        /* FOOTER DE AUTORIDADE */
         footer {
             background: #04070e;
             padding: 100px 10% 40px;
@@ -282,13 +280,11 @@
             text-transform: uppercase;
         }
 
-        /* ANIMAÇÃO DE ENTRADA */
         @keyframes fadeInStack {
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* RESPONSIVIDADE */
         @media (max-width: 1024px) {
             .footer-grid { grid-template-columns: 1fr; gap: 50px; }
             header { padding: 20px 5%; }
@@ -298,83 +294,83 @@
 </head>
 <body>
 
-    <header>
-        <a href="#" class="logo-container">
-            <img src="rvo-logo.jpg" alt="RVO Negócios" class="logo">
-            </a>
-        <nav>
-            <a href="#sobre">Institucional</a>
-            <a href="#servicos">Expertise</a>
-            <a href="#contato">Contato</a>
-        </nav>
-    </header>
+<header>
+    <a href="#" class="logo-container">
+        <img src="rvo-logo.jpg" alt="RVO Negócios" class="logo">
+    </a>
+    <nav>
+        <a href="#sobre">Institucional</a>
+        <a href="#servicos">Expertise</a>
+        <a href="#contato">Contato</a>
+    </nav>
+</header>
 
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Conectando <span>oportunidades</span>. Gerando <span>resultados</span>.</h1>
-                <p>Agenciamento de negócios de alto impacto nas áras Empresarial, Pública e do Terceiro Setor, unindo inteligência estratégica e governança para resultados exponenciais.</p>
-                <a href="https://wa.me/5511963537305" class="btn btn-primary">Iniciar Conversa Estratégica</a>
-            </div>
-        </section>
+<main>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Conectando <span>oportunidades</span>. Gerando <span>resultados</span>.</h1>
+            <p>Agenciamento de negócios de alto impacto nas áras Empresarial, Pública e do Terceiro Setor, unindo inteligência estratégica e governança para resultados exponenciais.</p>
+            <a href="https://wa.me/5511963537305" class="btn btn-primary">Iniciar Conversa Estratégica</a>
+        </div>
+    </section>
 
-        <section id="sobre">
-            <div class="content-block">
-                <h2 class="section-title"><span>Desde 2011</span>Nossa Essência</h2>
-                <p>Fundada sobre os pilares da ética e da precisão técnica, a RVO Negócios atua como o elo vital entre grandes ativos e investidores qualificados.</p>
-                <p style="font-size: 16px; opacity: 0.8;">Arquitetamos o sucesso de cada operação, garantindo que o valor seja maximizado através de uma rede de influência sólida e exclusiva.</p>
-            </div>
-        </section>
+    <section id="sobre">
+        <div class="content-block">
+            <h2 class="section-title"><span>Desde 2011</span>Nossa Essência</h2>
+            <p>Fundada sobre os pilares da ética e da precisão técnica, a RVO Negócios atua como o elo vital entre grandes ativos e investidores qualificados.</p>
+            <p style="font-size: 16px; opacity: 0.8;">Arquitetamos o sucesso de cada operação, garantindo que o valor seja maximizado através de uma rede de influência sólida e exclusiva.</p>
+        </div>
+    </section>
 
-        <section id="servicos" style="background: rgba(255,255,255,0.01);">
-            <h2 class="section-title"><span>O que fazemos</span>Expertise Corporativa</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Agenciamento</h3>
-                    <p>Curadoria rigorosa de parceiros de negócios para alinhamento absoluto com o core business da sua empresa.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Facilitação</h3>
-                    <p>Gestão técnica de ativos de alto valor e acesso a oportunidades exclusivas fora do radar do mercado tradicional.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Matching</h3>
-                    <p>Conexão assertiva entre capital e projetos de alta performance com análise de risco detalhada.</p>
-                </div>
+    <section id="servicos" style="background: rgba(255,255,255,0.01);">
+        <h2 class="section-title"><span>O que fazemos</span>Expertise Corporativa</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Agenciamento</h3>
+                <p>Curadoria rigorosa de parceiros de negócios para alinhamento absoluto com o core business da sua empresa.</p>
             </div>
-        </section>
-
-        <section id="contato" style="text-align: center; padding: 120px 10%;">
-            <div style="background: linear-gradient(135deg, #161e31 0%, #0b1120 100%); padding: 80px 40px; border: 1px solid rgba(201, 169, 97, 0.2);">
-                <h2 class="section-title" style="margin-bottom: 20px;">Expanda seus horizontes.</h2>
-                <p style="margin-bottom: 40px; color: var(--text-muted);">Entre em contato com nossa banca de agenciamento.</p>
-                <a href="https://wa.me/5511963537305" class="btn btn-primary">">Falar com um Especialista</a>
+            <div class="service-card">
+                <h3>Facilitação</h3>
+                <p>Gestão técnica de ativos de alto valor e acesso a oportunidades exclusivas fora do radar do mercado tradicional.</p>
             </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-logo-area">
-                <span class="logo-text">RVO Negócios</span>
-                <span>Agency, Business Intelligence & Brokerage</span>
-                <p class="cnpj-tag">CNPJ: 14.603.862/0001-13</p>
-            </div>
-            <div>
-                <h4 style="color: var(--primary); margin-bottom: 25px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase;">Acesso</h4>
-                <p><a href="#sobre" style="color: var(--text-muted); text-decoration: none; font-size: 14px;">Institucional</a></p>
-                <p><a href="#servicos" style="color: var(--text-muted); text-decoration: none; font-size: 14px;">Expertise</a></p>
-            </div>
-            <div>
-                <h4 style="color: var(--primary); margin-bottom: 25px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase;">Global</h4>
-                <p style="color: var(--text-muted); font-size: 14px;">São Paulo, Brasil</p>
-                <p style="color: var(--text-muted); font-size: 14px;">contato@rvonegocios.com.br</p>
+            <div class="service-card">
+                <h3>Matching</h3>
+                <p>Conexão assertiva entre capital e projetos de alta performance com análise de risco detalhada.</p>
             </div>
         </div>
-        <div class="footer-bottom">
-            &copy; 2026 RVO Negócios | Conectando oportunidades. Gerando resultados | Todos os direitos reservados.
+    </section>
+
+    <section id="contato" style="text-align: center; padding: 120px 10%;">
+        <div style="background: linear-gradient(135deg, #161e31 0%, #0b1120 100%); padding: 80px 40px; border: 1px solid rgba(201, 169, 97, 0.2);">
+            <h2 class="section-title" style="margin-bottom: 20px;">Expanda seus horizontes.</h2>
+            <p style="margin-bottom: 40px; color: var(--text-muted);">Entre em contato com nossa banca de agenciamento.</p>
+            <a href="https://wa.me/5511963537305" class="btn btn-primary">Falar com um Especialista</a>
         </div>
-    </footer>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-grid">
+        <div class="footer-logo-area">
+            <span class="logo-text">RVO Negócios</span>
+            <span>Agency, Business Intelligence & Brokerage</span>
+            <p class="cnpj-tag">CNPJ: 14.603.862/0001-13</p>
+        </div>
+        <div>
+            <h4 style="color: var(--primary); margin-bottom: 25px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase;">Acesso</h4>
+            <p><a href="#sobre" style="color: var(--text-muted); text-decoration: none; font-size: 14px;">Institucional</a></p>
+            <p><a href="#servicos" style="color: var(--text-muted); text-decoration: none; font-size: 14px;">Expertise</a></p>
+        </div>
+        <div>
+            <h4 style="color: var(--primary); margin-bottom: 25px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase;">Global</h4>
+            <p style="color: var(--text-muted); font-size: 14px;">São Paulo, Brasil</p>
+            <p style="color: var(--text-muted); font-size: 14px;">contato@rvonegocios.com.br</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; 2026 RVO Negócios | Conectando oportunidades. Gerando resultados | Todos os direitos reservados.
+    </div>
+</footer>
 
 </body>
 </html>
