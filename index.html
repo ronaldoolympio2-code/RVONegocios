@@ -37,7 +37,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 20px 5%;
+            padding: 15px 5%; /* Reduzi levemente o padding vertical */
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -47,13 +47,27 @@
             border-bottom: 1px solid rgba(201, 169, 97, 0.1);
         }
 
+        /* AJUSTE DA LOGO */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px; /* Espaço entre a imagem e o texto */
+            text-decoration: none;
+        }
+
+        .logo {
+            width: 50px; /* Ajuste aqui a LARGURA da sua logo */
+            height: auto; /* Mantém a proporção */
+            border-radius: 4px; /* Opcional: arredonda levemente as bordas */
+        }
+
         .logo-text {
             font-family: 'Playfair Display', serif;
             font-size: 24px;
             color: var(--primary);
-            text-decoration: none;
             font-weight: 700;
             letter-spacing: 1px;
+            white-space: nowrap;
         }
 
         nav a {
@@ -127,7 +141,6 @@
             margin: 20px auto;
         }
 
-        /* GRID DE SERVIÇOS */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -154,7 +167,6 @@
             margin-bottom: 15px;
         }
 
-        /* BOTOES */
         .btn {
             display: inline-block;
             padding: 15px 35px;
@@ -177,7 +189,6 @@
             transform: scale(1.05);
         }
 
-        /* FOOTER */
         footer {
             background: #060a14;
             padding: 60px 10% 20px;
@@ -209,7 +220,6 @@
             border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        /* ANIMATIONS */
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
@@ -218,14 +228,18 @@
         @media (max-width: 768px) {
             nav { display: none; }
             section { padding: 60px 5%; }
+            .logo-text { font-size: 18px; }
+            .logo { width: 40px; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <img src="rvo-logo.jpg" alt="RVO Negócios" class="logo">
-        <a href="#" class="logo-text">RVO NEGÓCIOS</a>
+        <a href="#" class="logo-container">
+            <img src="rvo-logo.jpg" alt="RVO Negócios" class="logo">
+            <span class="logo-text">RVO NEGÓCIOS</span>
+        </a>
         <nav>
             <a href="#sobre">Sobre</a>
             <a href="#servicos">Serviços</a>
@@ -234,16 +248,14 @@
     </header>
 
     <main>
-        <!-- HERO -->
         <section class="hero">
             <div class="hero-content">
-                <h1>Conectando <span>Oportunidades</span>. </h1>Gerando <span>resultados</span>.</h1>
+                <h1>Conectando <span>Oportunidades</span>. <br>Gerando <span>Resultados</span>.</h1>
                 <p>Agenciamento de negócios de alto impacto com foco em inteligência estratégica, governança e resultados exponenciais na área pública e privada.</p>
                 <a href="https://wa.me/5511963537305" class="btn btn-primary">Agendar Consultoria</a>
             </div>
         </section>
 
-        <!-- SOBRE -->
         <section id="sobre">
             <h2 class="section-title">A RVO Negócios</h2>
             <div style="max-width: 800px; margin: 0 auto; text-align: center;">
@@ -256,7 +268,6 @@
             </div>
         </section>
 
-        <!-- SERVIÇOS -->
         <section id="servicos" style="background: rgba(255,255,255,0.01);">
             <h2 class="section-title">Nossa Expertise</h2>
             <div class="services-grid">
@@ -275,7 +286,6 @@
             </div>
         </section>
 
-        <!-- CTA -->
         <section id="contato" style="text-align: center; background: var(--primary); color: var(--dark-bg);">
             <h2 class="section-title" style="color: var(--dark-bg);">Pronto para o próximo nível?</h2>
             <p style="margin-bottom: 30px; font-weight: 600;">Entre em contato com nossa banca de agenciamento.</p>
@@ -289,7 +299,7 @@
     <footer>
         <div class="footer-content">
             <div class="footer-info">
-                <a href="#" class="logo-text">RVO NEGÓCIOS</a>
+                <span class="logo-text">RVO NEGÓCIOS</span>
                 <span class="cnpj">CNPJ: 14.603.862/0001-13</span>
                 <p style="margin-top: 15px; font-size: 14px;">São Paulo, Brasil. Atendimento nacional e internacional.</p>
             </div>
