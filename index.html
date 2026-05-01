@@ -23,6 +23,10 @@ body {
     justify-content: center;
     min-height: 100vh;
     padding: 50px 20px;
+
+    /* MICROTIPOGRAFIA */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* FUNDO SUTIL */
@@ -37,18 +41,18 @@ body::before {
 
 /* CONTAINER */
 .container {
-    max-width: 640px; /* mais estreito = mais premium */
+    max-width: 640px;
     width: 100%;
     text-align: center;
     position: relative;
     z-index: 2;
 }
 
-/* LOGO (AJUSTE CRÍTICO) */
+/* LOGO */
 .logo {
-    width: 320px; /* reduzido para proporção institucional */
-    max-width: 85%;
-    margin-bottom: 35px;
+    width: 380px;
+    max-width: 88%;
+    margin-bottom: 30px;
 
     opacity: 0;
     transform: translateY(-15px);
@@ -60,6 +64,8 @@ h1 {
     font-family: 'Playfair Display', serif;
     font-size: 40px;
     margin-bottom: 10px;
+    letter-spacing: 0.6px;
+    line-height: 1.2;
 
     opacity: 0;
     animation: fadeUp 1.2s ease forwards;
@@ -75,6 +81,7 @@ h1 span {
     font-size: 16.5px;
     color: #9ca3af;
     margin-bottom: 20px;
+    letter-spacing: 0.3px;
 
     opacity: 0;
     animation: fadeUp 1.2s ease forwards;
@@ -93,25 +100,27 @@ h1 span {
     animation-delay: 0.6s;
 }
 
-/* TEXTO (AJUSTE DE LEITURA) */
+/* TEXTO */
 .text {
     font-size: 16px;
-    line-height: 1.7;
+    line-height: 1.75;
     color: #d1d5db;
-    margin: 0 auto 30px auto;
-    max-width: 520px; /* leitura tipo relatório */
-    
+    margin: 0 auto 28px auto;
+    max-width: 520px;
+    letter-spacing: 0.2px;
+
     opacity: 0;
     animation: fadeUp 1.2s ease forwards;
     animation-delay: 0.8s;
 }
 
-/* BOTÕES (AJUSTE IMPORTANTE) */
+/* BOTÕES */
 .btn-group {
     display: flex;
     justify-content: center;
     gap: 12px;
     flex-wrap: wrap;
+    margin-bottom: 5px;
 
     opacity: 0;
     animation: fadeUp 1.2s ease forwards;
@@ -120,14 +129,14 @@ h1 span {
 
 .btn {
     padding: 11px 24px;
-    font-size: 14px;
+    font-size: 13.5px;
     border-radius: 3px;
     text-decoration: none;
     font-weight: 500;
+    letter-spacing: 0.4px;
     transition: all 0.25s ease;
 }
 
-/* BOTÃO PRINCIPAL */
 .btn-primary {
     background: #c9a961;
     color: #0b1120;
@@ -137,7 +146,6 @@ h1 span {
     transform: translateY(-1px);
 }
 
-/* BOTÃO SECUNDÁRIO */
 .btn-outline {
     border: 1px solid #c9a961;
     color: #c9a961;
@@ -150,10 +158,11 @@ h1 span {
 
 /* ASSINATURA */
 .footer {
-    margin-top: 40px;
-    font-size: 13px;
+    margin-top: 20px;
+    font-size: 12.5px;
     color: #c9a961;
-    letter-spacing: 0.4px;
+    letter-spacing: 0.6px;
+    line-height: 1.6;
 
     opacity: 0;
     animation: fadeUp 1.2s ease forwards;
@@ -202,7 +211,7 @@ h1 span {
 
 <div class="container">
 
-    <img src="rvo-logo.jpg" class="logo">
+    <img src="rvo-logo.jpg" alt="RVO Negócios" class="logo">
 
     <h1><span>Aguarde</span></h1>
 
