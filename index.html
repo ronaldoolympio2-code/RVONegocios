@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RVO Negócios | Conectando oportunidades. Gerando resultados.</title>
+    <title>RVO Negócios | Agenciamento Estratégico</title>
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --primary: #c9a961; /* Gold */
-            --dark-bg: #0b1120; /* Deep Navy */
-            --light-text: #e5e7eb;
-            --muted-text: #9ca3af;
-            --accent: #1f2a44;
+            --primary: #c9a961;
+            --primary-light: #dec68b;
+            --dark-bg: #0b1120;
+            --card-bg: rgba(255, 255, 255, 0.02);
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         * {
@@ -26,250 +27,272 @@
 
         body {
             background-color: var(--dark-bg);
-            color: var(--light-text);
+            color: var(--text-main);
             font-family: 'Inter', sans-serif;
-            line-height: 1.6;
+            line-height: 1.8;
             -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
 
-        /* HEADER */
+        /* HEADER HARMONIZADO */
         header {
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 15px 5%;
+            padding: 25px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(11, 17, 32, 0.95);
-            backdrop-filter: blur(12px);
+            background: rgba(11, 17, 32, 0.85);
+            backdrop-filter: blur(15px);
             z-index: 1000;
-            border-bottom: 1px solid rgba(201, 169, 97, 0.15);
+            border-bottom: 1px solid rgba(201, 169, 97, 0.1);
+            transition: var(--transition);
         }
 
-        /* LOGO AJUSTADA */
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 20px; /* Mais espaço entre logo e texto */
+            gap: 22px;
             text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .logo-container:hover .logo {
-            filter: brightness(1.2);
-            transform: scale(1.02);
         }
 
         .logo {
-            width: 140px; /* Aumentado conforme solicitado */
+            width: 75px;
             height: auto;
-            border-radius: 2px;
-            transition: all 0.3s ease;
+            filter: grayscale(20%);
+            transition: var(--transition);
         }
 
         .logo-text {
             font-family: 'Playfair Display', serif;
-            font-size: 28px; /* Aumentado para equilibrar com a imagem maior */
+            font-size: 26px;
             color: var(--primary);
             font-weight: 700;
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
             text-transform: uppercase;
         }
 
-        /* NAVEGAÇÃO */
+        nav {
+            display: flex;
+            gap: 40px;
+        }
+
         nav a {
-            color: var(--light-text);
+            color: var(--text-main);
             text-decoration: none;
-            margin-left: 35px;
-            font-size: 13px;
-            font-weight: 600;
+            font-size: 12px;
+            font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 1.2px;
-            transition: 0.3s;
-            position: relative;
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 1px;
-            bottom: -5px;
-            left: 0;
-            background-color: var(--primary);
-            transition: 0.3s;
-        }
-
-        nav a:hover::after {
-            width: 100%;
+            letter-spacing: 2px;
+            transition: var(--transition);
+            opacity: 0.8;
         }
 
         nav a:hover {
             color: var(--primary);
+            opacity: 1;
+            transform: translateY(-1px);
         }
 
-        /* HERO SECTION */
+        /* HERO - O EQUILÍBRIO DO IMPACTO */
         .hero {
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
-            padding: 0 20px;
-            background: radial-gradient(circle at center, rgba(31, 42, 68, 0.4) 0%, rgba(11, 17, 32, 1) 80%);
+            padding: 0 10%;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(201, 169, 97, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(31, 42, 68, 0.3) 0%, transparent 40%);
         }
 
         .hero-content {
-            max-width: 900px;
-            animation: fadeInUp 1.5s ease;
+            max-width: 1000px;
+            text-align: center;
+            animation: fadeInStack 1.8s ease-out;
         }
 
         h1 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(42px, 6vw, 75px);
-            line-height: 1.1;
-            margin-bottom: 25px;
+            font-size: clamp(45px, 7vw, 80px);
+            line-height: 1.05;
+            margin-bottom: 35px;
+            font-weight: 700;
+            color: #fff;
         }
 
         h1 span {
             color: var(--primary);
+            font-style: italic;
+            font-weight: 600;
         }
 
         .hero p {
-            font-size: clamp(17px, 2vw, 21px);
-            color: var(--muted-text);
-            margin-bottom: 40px;
-            max-width: 750px;
+            font-size: clamp(18px, 2vw, 22px);
+            color: var(--text-muted);
+            margin-bottom: 50px;
+            max-width: 800px;
             margin-left: auto;
             margin-right: auto;
             font-weight: 300;
+            letter-spacing: 0.5px;
         }
 
-        /* SECTIONS GERAIS */
+        /* BOTÕES DE PRESTÍGIO */
+        .btn {
+            display: inline-block;
+            padding: 20px 45px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 2px;
+            border-radius: 2px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, #b39552 100%);
+            color: var(--dark-bg);
+            box-shadow: 0 10px 30px rgba(201, 169, 97, 0.15);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(201, 169, 97, 0.25);
+            filter: brightness(1.1);
+        }
+
+        /* SEÇÕES COM RITMO VISUAL */
         section {
-            padding: 120px 10%;
+            padding: 160px 10%;
         }
 
         .section-title {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(30px, 4vw, 42px);
-            margin-bottom: 60px;
+            font-size: clamp(32px, 4vw, 48px);
+            margin-bottom: 80px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .section-title span {
+            display: block;
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
+            color: var(--primary);
+            letter-spacing: 5px;
+            margin-bottom: 15px;
+        }
+
+        .content-block {
+            max-width: 900px;
+            margin: 0 auto;
             text-align: center;
         }
 
-        .section-title::after {
-            content: "";
-            display: block;
-            width: 60px;
-            height: 3px;
-            background: var(--primary);
-            margin: 25px auto;
+        .content-block p {
+            font-size: 20px;
+            color: var(--text-muted);
+            margin-bottom: 30px;
         }
 
+        /* GRID DE SERVIÇOS HARMONIZADO */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 40px;
         }
 
         .service-card {
-            background: rgba(255, 255, 255, 0.02);
-            padding: 50px 40px;
-            border: 1px solid rgba(201, 169, 97, 0.1);
-            transition: 0.4s ease-in-out;
-            border-radius: 2px;
+            background: var(--card-bg);
+            padding: 60px 45px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 2px; height: 0;
+            background: var(--primary);
+            transition: var(--transition);
         }
 
         .service-card:hover {
-            border-color: var(--primary);
-            transform: translateY(-12px);
-            background: rgba(201, 169, 97, 0.03);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            background: rgba(255, 255, 255, 0.04);
+            border-color: rgba(201, 169, 97, 0.2);
+            transform: translateY(-10px);
+        }
+
+        .service-card:hover::before {
+            height: 100%;
         }
 
         .service-card h3 {
             font-family: 'Playfair Display', serif;
             color: var(--primary);
-            margin-bottom: 20px;
-            font-size: 22px;
+            margin-bottom: 25px;
+            font-size: 26px;
         }
 
-        /* BOTÕES */
-        .btn {
-            display: inline-block;
-            padding: 18px 40px;
-            border-radius: 1px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.4s;
-            text-transform: uppercase;
-            font-size: 13px;
-            letter-spacing: 1.5px;
-        }
-
-        .btn-primary {
-            background: var(--primary);
-            color: var(--dark-bg);
-        }
-
-        .btn-primary:hover {
-            background: #b39552;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(201, 169, 97, 0.2);
-        }
-
-        /* FOOTER */
+        /* FOOTER DE AUTORIDADE */
         footer {
-            background: #060a14;
-            padding: 80px 10% 30px;
-            border-top: 1px solid rgba(201, 169, 97, 0.1);
+            background: #04070e;
+            padding: 100px 10% 40px;
+            border-top: 1px solid rgba(201, 169, 97, 0.05);
         }
 
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 50px;
-            margin-bottom: 60px;
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 80px;
+            margin-bottom: 80px;
         }
 
-        .footer-info { max-width: 350px; }
-        
-        .cnpj {
-            font-size: 12px;
-            color: var(--primary);
-            margin-top: 15px;
+        .footer-logo-area span {
             display: block;
-            font-weight: 600;
-            letter-spacing: 1px;
+            margin-top: 15px;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--primary);
+        }
+
+        .cnpj-tag {
+            margin-top: 25px;
+            font-size: 12px;
+            color: var(--text-muted);
+            opacity: 0.6;
         }
 
         .footer-bottom {
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
             text-align: center;
-            font-size: 12px;
-            color: var(--muted-text);
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            letter-spacing: 0.5px;
+            font-size: 11px;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
-        /* ANIMATIONS */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(40px); }
+        /* ANIMAÇÃO DE ENTRADA */
+        @keyframes fadeInStack {
+            from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        @media (max-width: 992px) {
-            header { padding: 15px 3%; }
-            .logo { width: 60px; }
-            .logo-text { font-size: 20px; }
-        }
-
-        @media (max-width: 768px) {
+        /* RESPONSIVIDADE */
+        @media (max-width: 1024px) {
+            .footer-grid { grid-template-columns: 1fr; gap: 50px; }
+            header { padding: 20px 5%; }
             nav { display: none; }
-            section { padding: 80px 5%; }
-            .logo-container { gap: 10px; }
         }
     </style>
 </head>
@@ -278,7 +301,8 @@
     <header>
         <a href="#" class="logo-container">
             <img src="rvo-logo.jpg" alt="RVO Negócios" class="logo">
-            </a>
+            <span class="logo-text">RVO</span>
+        </a>
         <nav>
             <a href="#sobre">Institucional</a>
             <a href="#servicos">Expertise</a>
@@ -287,75 +311,69 @@
     </header>
 
     <main>
-        <!-- HERO -->
         <section class="hero">
             <div class="hero-content">
-                <h1>Conectando <span>Oportunidades</span>.<br>Gerando <span>Resultados</span>.</h1>
-                <p>Agenciamento de negócios de alto impacto com foco em inteligência estratégica, governança e resultados exponenciais nas áreas pública, privada e terceiro setor.</p>
-                <a href="https://wa.me/5511963537305" class="btn btn-primary">Agendar Consultoria</a>
+                <h1>Conectando <span>oportunidades</span>. Gerando <span>resultados</span> A estratégia por trás de cada <span>grande decisão</span>.</h1>
+                <p>Agenciamento de negócios de alto impacto unindo inteligência estratégica e governança para resultados exponenciais.</p>
+                <a href="https://wa.me/5511963537305" class="btn btn-primary">Iniciar Conversa Estratégica</a>
             </div>
         </section>
 
-        <!-- SOBRE -->
         <section id="sobre">
-            <h2 class="section-title">A RVO Negócios</h2>
-            <div style="max-width: 850px; margin: 0 auto; text-align: center;">
-                <p style="font-size: 19px; color: var(--light-text); margin-bottom: 25px; font-weight: 300;">
-                    Fundada em 2011 sobre os pilares da ética e da precisão técnica, a RVO Negócios atua como o elo vital entre grandes ativos e investidores qualificados. 
-                </p>
-                <p style="color: var(--muted-text);">
-                    Nossa expertise reside na identificação de sinergias invisíveis ao mercado comum, transformando intenções em transações sólidas. Não apenas intermediamos; nós arquitetamos o sucesso de cada operação, garantindo que o valor seja maximizado para todas as partes envolvidas através de uma rede de contatos sólida e influência estratégica.
-                </p>
+            <div class="content-block">
+                <h2 class="section-title"><span>Desde 2011</span>Nossa Essência</h2>
+                <p>Fundada sobre os pilares da ética e da precisão técnica, a RVO Negócios atua como o elo vital entre grandes ativos e investidores qualificados.</p>
+                <p style="font-size: 16px; opacity: 0.8;">Arquitetamos o sucesso de cada operação, garantindo que o valor seja maximizado através de uma rede de influência sólida e exclusiva.</p>
             </div>
         </section>
 
-        <!-- SERVIÇOS -->
         <section id="servicos" style="background: rgba(255,255,255,0.01);">
-            <h2 class="section-title">Nossa Expertise</h2>
+            <h2 class="section-title"><span>O que fazemos</span>Expertise Corporativa</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <h3>Agenciamento Estratégico</h3>
-                    <p>Identificação e curadoria de parceiros de negócios rigorosamente selecionados para alinhamento com seu core business.</p>
+                    <h3>Agenciamento</h3>
+                    <p>Curadoria rigorosa de parceiros de negócios para alinhamento absoluto com o core business da sua empresa.</p>
                 </div>
                 <div class="service-card">
-                    <h3>Facilitação de Ativos</h3>
-                    <p>Intermediação técnica de ativos de alto valor e gestão de oportunidades exclusivas fora do radar do mercado tradicional.</p>
+                    <h3>Facilitação</h3>
+                    <p>Gestão técnica de ativos de alto valor e acesso a oportunidades exclusivas fora do radar do mercado tradicional.</p>
                 </div>
                 <div class="service-card">
-                    <h3>Business Matching</h3>
-                    <p>Conexão assertiva entre capital e projetos escaláveis, utilizando análise de risco e viabilidade de última geração.</p>
+                    <h3>Matching</h3>
+                    <p>Conexão assertiva entre capital e projetos de alta performance com análise de risco detalhada.</p>
                 </div>
             </div>
         </section>
 
-        <!-- CTA -->
-        <section id="contato" style="text-align: center; background: var(--primary); color: var(--dark-bg); padding: 80px 10%;">
-            <h2 class="section-title" style="color: var(--dark-bg); margin-bottom: 20px;">Pronto para o próximo nível?</h2>
-            <p style="margin-bottom: 40px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">Entre em contato com nossa banca de agenciamento.</p>
-            <div class="btn-group">
-                <a href="mailto:contato@rvonegocios.com.br" class="btn" style="background: var(--dark-bg); color: #fff;">Enviar E-mail</a>
-                <a href="https://wa.me/5511963537305" class="btn" style="border: 2px solid var(--dark-bg); color: var(--dark-bg); margin-left: 15px;">WhatsApp</a>
+        <section id="contato" style="text-align: center; padding: 120px 10%;">
+            <div style="background: linear-gradient(135deg, #161e31 0%, #0b1120 100%); padding: 80px 40px; border: 1px solid rgba(201, 169, 97, 0.2);">
+                <h2 class="section-title" style="margin-bottom: 20px;">Expanda seus horizontes.</h2>
+                <p style="margin-bottom: 40px; color: var(--text-muted);">Entre em contato com nossa banca de agenciamento.</p>
+                <a href="mailto:contato@rvonegocios.com.br" class="btn btn-primary">Falar com um Especialista</a>
             </div>
         </section>
     </main>
 
     <footer>
-        <div class="footer-content">
-            <div class="footer-info">
-                <img src="rvo-logo.jpg" alt="RVO Negócios" class="logo">
-                <span class="logo-text" style="font-size: 22px;">RVO Negócios</span>
-                <span class="cnpj">CNPJ: 14.603.862/0001-13</span>
-                <p style="margin-top: 20px; font-size: 14px; color: var(--muted-text);">Referência em agenciamento de negócios desde 2011. São Paulo, Brasil.</p>
+        <div class="footer-grid">
+            <div class="footer-logo-area">
+                <span class="logo-text">RVO Negócios</span>
+                <span>Business Intelligence & Brokerage</span>
+                <p class="cnpj-tag">CNPJ: 14.603.862/0001-13</p>
             </div>
             <div>
-                <h4 style="color: var(--primary); margin-bottom: 20px; text-transform: uppercase; font-size: 14px; letter-spacing: 1px;">Navegação</h4>
-                <p style="margin-bottom: 10px;"><a href="#sobre" style="color: var(--muted-text); text-decoration: none; transition: 0.3s;">Sobre nós</a></p>
-                <p style="margin-bottom: 10px;"><a href="#servicos" style="color: var(--muted-text); text-decoration: none; transition: 0.3s;">Serviços</a></p>
-                <p><a href="https://wa.me/5511963537305" style="color: var(--muted-text); text-decoration: none; transition: 0.3s;">Contato Direto</a></p>
+                <h4 style="color: var(--primary); margin-bottom: 25px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase;">Acesso</h4>
+                <p><a href="#sobre" style="color: var(--text-muted); text-decoration: none; font-size: 14px;">Institucional</a></p>
+                <p><a href="#servicos" style="color: var(--text-muted); text-decoration: none; font-size: 14px;">Expertise</a></p>
+            </div>
+            <div>
+                <h4 style="color: var(--primary); margin-bottom: 25px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase;">Global</h4>
+                <p style="color: var(--text-muted); font-size: 14px;">São Paulo, Brasil</p>
+                <p style="color: var(--text-muted); font-size: 14px;">contato@rvonegocios.com.br</p>
             </div>
         </div>
         <div class="footer-bottom">
-            &copy; 2026 RVO Negócios. Todos os direitos reservados. <br> Inteligência e Ética em Agenciamento Corporativo.
+            &copy; 2026 RVO Negócios | Todos os direitos reservados.
         </div>
     </footer>
 
