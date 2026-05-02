@@ -44,17 +44,15 @@
             align-items: center;
             background: rgba(11, 17, 32, 0.7);
             backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
             z-index: 1000;
             border-bottom: 1px solid rgba(201, 169, 97, 0.1);
             transition: var(--transition-smooth);
         }
 
-        .logo-link { cursor: pointer; display: block; }
+        .logo-link { cursor: pointer; display: block; border: none; background: transparent; outline: none; }
         .logo { width: 210px; height: auto; transition: var(--transition-smooth); display: block; }
 
         nav { display: flex; gap: 45px; }
-
         nav a {
             color: var(--text-main);
             text-decoration: none;
@@ -65,7 +63,6 @@
             transition: var(--transition-smooth);
             opacity: 0.6;
         }
-
         nav a:hover { opacity: 1; color: var(--primary); }
 
         /* --- HERO --- */
@@ -88,12 +85,10 @@
             margin-bottom: 40px;
             color: #fff;
         }
-
         h1 span { color: var(--primary); font-style: italic; font-weight: 600; }
 
         /* --- SEÇÕES --- */
         section { padding: 180px 12%; }
-
         .section-title {
             font-family: 'Playfair Display', serif;
             font-size: clamp(36px, 5vw, 58px);
@@ -101,7 +96,6 @@
             text-align: center;
             color: #fff;
         }
-
         .section-title span {
             display: block;
             font-size: 12px;
@@ -119,14 +113,12 @@
             grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
             gap: 50px;
         }
-
         .service-card {
             background: var(--card-bg);
             padding: 85px 55px;
             border: 1px solid rgba(255, 255, 255, 0.03);
             transition: var(--transition-smooth);
         }
-
         .service-card h3 { 
             font-family: 'Playfair Display', serif; 
             color: var(--primary); 
@@ -141,7 +133,6 @@
             gap: 70px;
             margin-bottom: 80px;
         }
-
         .img-wrapper {
             width: 100%;
             height: 580px;
@@ -149,35 +140,17 @@
             border-radius: 2px;
             box-shadow: 0 40px 80px rgba(0,0,0,0.6);
         }
-
         .img-predio { width: 100%; height: 100%; object-fit: cover; transition: transform 2s var(--transition-smooth); }
         .card-localizacao:hover .img-predio { transform: scale(1.1); }
+        .map-wrapper { border-radius: 2px; overflow: hidden; border: 1px solid rgba(201, 169, 97, 0.1); margin-top: 20px;}
 
-        .map-wrapper {
-            border-radius: 2px;
-            overflow: hidden;
-            border: 1px solid rgba(201, 169, 97, 0.1);
-        }
-
-        /* --- VOLTAR AO TOPO --- */
+        /* --- BOTÃO TOPO --- */
         #topBtn {
-            position: fixed;
-            bottom: 50px;
-            right: 50px;
-            z-index: 9999;
-            background: var(--primary);
-            color: #0b1120;
-            border: none;
-            width: 65px;
-            height: 65px;
-            border-radius: 50%;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            font-size: 24px;
-            transition: var(--transition-smooth);
+            position: fixed; bottom: 50px; right: 50px; z-index: 9999;
+            background: var(--primary); color: #0b1120; border: none;
+            width: 65px; height: 65px; border-radius: 50%; cursor: pointer;
+            opacity: 0; visibility: hidden; font-size: 24px; transition: var(--transition-smooth);
         }
-
         #topBtn.show { opacity: 1; visibility: visible; }
 
         /* --- FOOTER --- */
@@ -186,14 +159,12 @@
             padding: 140px 10% 60px;
             border-top: 1px solid rgba(201, 169, 97, 0.05);
         }
-
         .footer-grid {
             display: grid;
             grid-template-columns: 2.5fr 1fr 1.5fr;
             gap: 100px;
             margin-bottom: 80px;
         }
-
         .logo-text {
             font-family: 'Playfair Display', serif;
             font-size: 28px;
@@ -216,10 +187,9 @@
 <button id="topBtn" onclick="voltarAoTopo()">↑</button>
 
 <header id="mainHeader">
-    <!-- Acionando função JavaScript para garantir o topo real -->
-    <a onclick="voltarAoTopo()" class="logo-link">
+    <button onclick="voltarAoTopo()" class="logo-link">
         <img src="rvo-logo.jpg" alt="RVO Negócios" class="logo">
-    </a>
+    </button>
     <nav>
         <a href="#sobre">Institucional</a>
         <a href="#servicos">Expertise</a>
@@ -229,7 +199,6 @@
 </header>
 
 <main>
-    <!-- HERO -->
     <section class="hero">
         <div class="hero-content">
             <h1>Conectando <span>oportunidades</span>. <br>Gerando <span>resultados</span>.</h1>
@@ -240,7 +209,6 @@
         </div>
     </section>
 
-    <!-- SOBRE -->
     <section id="sobre">
         <div style="max-width: 850px; margin: 0 auto; text-align: center;">
             <h2 class="section-title"><span>Desde 2011</span>Nossa Essência</h2>
@@ -249,7 +217,6 @@
         </div>
     </section>
 
-    <!-- EXPERTISE -->
     <section id="servicos" style="background: rgba(255,255,255,0.015);">
         <h2 class="section-title"><span>Estratégia</span>Expertise Corporativa</h2>
         <div class="services-grid">
@@ -268,7 +235,6 @@
         </div>
     </section>
 
-    <!-- LOCALIZAÇÃO -->
     <section id="localizacao">
         <h2 class="section-title"><span>Hubs de Negócios</span>Localização</h2>
         <div class="grid-localizacao">
@@ -278,6 +244,9 @@
                     <strong style="color: var(--primary); letter-spacing: 3px;">SÃO PAULO</strong><br><br>
                     Av. Eng. Luiz Carlos Berrini, 1681<br>SP CORPORATE - Itaim Bibi - 04571-011
                 </div>
+                <div class="map-wrapper">
+                    <iframe src="https://www.google.com/maps?q=Av+Engenheiro+Luiz+Carlos+Berrini+1681+São+Paulo&output=embed" style="width:100%;height:300px;border:0;filter: grayscale(1) invert(0.92) contrast(1.1);"></iframe>
+                </div>
             </div>
             <div class="card-localizacao">
                 <div class="img-wrapper"><img src="prediorj.png" class="img-predio" alt="Torre Rio Sul"></div>
@@ -285,19 +254,13 @@
                     <strong style="color: var(--primary); letter-spacing: 3px;">RIO DE JANEIRO</strong><br><br>
                     Rua Lauro Müller, 116<br>TORRE DO RIO SUL - Botafogo - 22290-160
                 </div>
-            </div>
-        </div>
-        <div class="grid-localizacao" style="gap: 40px; margin-top: 40px;">
-            <div class="map-wrapper">
-                <iframe src="https://www.google.com/maps?q=Av+Engenheiro+Luiz+Carlos+Berrini+1681+São+Paulo&output=embed" style="width:100%;height:350px;border:0;filter: grayscale(1) invert(0.92) contrast(1.1);"></iframe>
-            </div>
-            <div class="map-wrapper">
-                <iframe src="https://www.google.com/maps?q=Rua+Lauro+Müller,+116+-+Botafogo,+Rio+de+Janeiro&output=embed" style="width:100%;height:350px;border:0;filter: grayscale(1) invert(0.92) contrast(1.1);"></iframe>
+                <div class="map-wrapper">
+                    <iframe src="https://www.google.com/maps?q=Rua+Lauro+Müller,+116+-+Botafogo,+Rio+de+Janeiro&output=embed" style="width:100%;height:300px;border:0;filter: grayscale(1) invert(0.92) contrast(1.1);"></iframe>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- CONTATO -->
     <section id="contato">
         <div style="background: linear-gradient(135deg, #111a2e 0%, #080d1a 100%); padding: 140px 60px; text-align: center; border: 1px solid rgba(201, 169, 97, 0.15); box-shadow: 0 50px 100px rgba(0,0,0,0.4);">
             <h2 class="section-title" style="margin-bottom: 30px;">Expanda seus horizontes.</h2>
@@ -337,13 +300,10 @@
     const topBtn = document.getElementById("topBtn");
     const header = document.getElementById("mainHeader");
 
-    // Função centralizada para voltar ao topo absoluto
     function voltarAoTopo() {
+        // SOLUÇÃO FINAL: Limpa a âncora da URL e sobe para o zero absoluto instantaneamente
+        history.pushState("", document.title, window.location.pathname);
         window.scrollTo({ top: 0, behavior: 'smooth' });
-        // Limpa a âncora da URL para evitar conflitos de scroll no navegador
-        if (history.pushState) {
-            history.pushState("", document.title, window.location.pathname);
-        }
     }
 
     window.onscroll = function() {
