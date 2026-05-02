@@ -65,15 +65,6 @@
             height: auto;
             filter: grayscale(20%);
             transition: var(--transition);
-        .location-img,
-        .map-container 
-        height: 300px; /* diminui o frame */
-}
-        
-        
-        
-        
-        
         }
 
         .logo-text {
@@ -263,44 +254,16 @@
             margin-bottom: 80px;
         }
 
-        .footer-logo-area span {
-            display: block;
-            margin-top: 15px;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            color: var(--primary);
-        }
-
-        .cnpj-tag {
-            margin-top: 25px;
-            font-size: 12px;
-            color: var(--text-muted);
-            opacity: 0.6;
-        }
-
         .footer-bottom {
             padding-top: 40px;
             border-top: 1px solid rgba(255, 255, 255, 0.03);
             text-align: center;
             font-size: 11px;
             color: var(--text-muted);
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        @keyframes fadeInStack {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @media (max-width: 1024px) {
-            .footer-grid { grid-template-columns: 1fr; gap: 50px; }
-            header { padding: 20px 5%; }
-            nav { display: none; }
         }
     </style>
 </head>
+
 <body>
 
 <header>
@@ -316,77 +279,80 @@
 </header>
 
 <main>
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Conectando <span>oportunidades</span>. Gerando <span>resultados</span>.</h1>
-            <p>Agenciamento de negócios de alto impacto nas áras Empresarial, Pública e do Terceiro Setor, unindo inteligência estratégica e governança para resultados exponenciais.</p>
-            <a href="https://wa.me/5511963537305" class="btn btn-primary">Iniciar Conversa Estratégica</a>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Conectando <span>oportunidades</span>. Gerando <span>resultados</span>.</h1>
+        <p>Agenciamento de negócios de alto impacto nas áras Empresarial, Pública e do Terceiro Setor, unindo inteligência estratégica e governança para resultados exponenciais.</p>
+        <a href="https://wa.me/5511963537305" class="btn btn-primary">Iniciar Conversa Estratégica</a>
+    </div>
+</section>
+
+<section id="sobre">
+    <div class="content-block">
+        <h2 class="section-title"><span>Desde 2011</span>Nossa Essência</h2>
+        <p>Fundada sobre os pilares da ética e da precisão técnica, a RVO Negócios atua como o elo vital entre grandes ativos e investidores qualificados.</p>
+        <p style="font-size: 16px; opacity: 0.8;">Arquitetamos o sucesso de cada operação, garantindo que o valor seja maximizado através de uma rede de influência sólida e exclusiva.</p>
+    </div>
+</section>
+
+<section id="servicos" style="background: rgba(255,255,255,0.01);">
+    <h2 class="section-title"><span>O que fazemos</span>Expertise Corporativa</h2>
+    <div class="services-grid">
+        <div class="service-card">
+            <h3>Agenciamento</h3>
+            <p>Curadoria rigorosa de parceiros de negócios para alinhamento absoluto com o core business da sua empresa.</p>
         </div>
-    </section>
-
-    <section id="sobre">
-        <div class="content-block">
-            <h2 class="section-title"><span>Desde 2011</span>Nossa Essência</h2>
-            <p>Fundada sobre os pilares da ética e da precisão técnica, a RVO Negócios atua como o elo vital entre grandes ativos e investidores qualificados.</p>
-            <p style="font-size: 16px; opacity: 0.8;">Arquitetamos o sucesso de cada operação, garantindo que o valor seja maximizado através de uma rede de influência sólida e exclusiva.</p>
+        <div class="service-card">
+            <h3>Facilitação</h3>
+            <p>Gestão técnica de ativos de alto valor e acesso a oportunidades exclusivas fora do radar do mercado tradicional.</p>
         </div>
-    </section>
-
-    <section id="servicos" style="background: rgba(255,255,255,0.01);">
-        <h2 class="section-title"><span>O que fazemos</span>Expertise Corporativa</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>Agenciamento</h3>
-                <p>Curadoria rigorosa de parceiros de negócios para alinhamento absoluto com o core business da sua empresa.</p>
-            </div>
-            <div class="service-card">
-                <h3>Facilitação</h3>
-                <p>Gestão técnica de ativos de alto valor e acesso a oportunidades exclusivas fora do radar do mercado tradicional.</p>
-            </div>
-            <div class="service-card">
-                <h3>Matching</h3>
-                <p>Conexão assertiva entre capital e projetos de alta performance com análise de risco detalhada.</p>
-            </div>
+        <div class="service-card">
+            <h3>Matching</h3>
+            <p>Conexão assertiva entre capital e projetos de alta performance com análise de risco detalhada.</p>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- 🔥 NOVA SEÇÃO LOCALIZAÇÃO -->
-
-   <section id="localizacao" style="background: rgba(255,255,255,0.01); text-align: center;">
+<!-- 🔥 LOCALIZAÇÃO CORRIGIDA -->
+<section id="localizacao" style="background: rgba(255,255,255,0.01); text-align: center;">
     <h2 class="section-title">
         <span>Onde estamos</span>
         Localização
     </h2>
 
-    <div class="location-grid">
-        <img src="predio.jpg" alt="Localização RVO Negócios">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-bottom:30px;">
+        <img src="prediosp.jpg" style="width:100%;height:300px;object-fit:cover;">
+        <img src="prediorj.jpg" style="width:100%;height:300px;object-fit:cover;">
+    </div>
 
-        <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3655.803073740152!2d-46.69734909041075!3d-23.61139446334115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce50cc02c14a57%3A0xb54614c358648c2!2sAv.%20Engenheiro%20Lu%C3%ADs%20Carlos%20Berrini%2C%201681%20-%20Cidade%20Monções%2C%20São%20Paulo!5e0!3m2!1spt-BR!2sbr">
-        </iframe>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:30px;">
+        <iframe src="https://www.google.com/maps?q=Av+Engenheiro+Luiz+Carlos+Berrini+1681+São+Paulo&output=embed" style="width:100%;height:300px;border:0;"></iframe>
+        <iframe src="https://www.google.com/maps?q=Rua+Lauro+Müller,+116+-+Botafogo,+Rio+de+Janeiro+-+RJ,+CEP+22290-160&output=embed" style="width:100%;height:300px;border:0;"></iframe>
     </div>
 
     <div style="text-align:center;margin-top:40px;">
-        <p>Estamos estrategicamente posicionados em São Paulo, transformando oportunidades em negócios em um dos maiores centros financeiros do mundo.</p>
+        <p>Estamos estrategicamente posicionados em São Paulo e no Rio de Janeiro, transformando oportunidades em negócios em dois dos maiores centros financeiros do mundo.</p>
         <a href="https://www.google.com/maps?q=Av+Engenheiro+Luiz+Carlos+Berrini+1681+São+Paulo" target="_blank" class="btn btn-primary">
             Ver no Google Maps
         </a>
     </div>
 </section>
 
-    <section id="contato" style="text-align: center; padding: 120px 10%;">
-        <div style="background: linear-gradient(135deg, #161e31 0%, #0b1120 100%); padding: 80px 40px; border: 1px solid rgba(201, 169, 97, 0.2);">
-            <h2 class="section-title" style="margin-bottom: 20px;">Expanda seus horizontes.</h2>
-            <p style="margin-bottom: 40px; color: var(--text-muted);">Entre em contato com nossa banca de agenciamento.</p>
-            <a href="https://wa.me/5511963537305" class="btn btn-primary">Falar com um Especialista</a>
-        </div>
-    </section>
+<section id="contato" style="text-align: center; padding: 120px 10%;">
+    <div style="background: linear-gradient(135deg, #161e31 0%, #0b1120 100%); padding: 80px 40px; border: 1px solid rgba(201, 169, 97, 0.2);">
+        <h2 class="section-title" style="margin-bottom: 20px;">Expanda seus horizontes.</h2>
+        <p style="margin-bottom: 40px; color: var(--text-muted);">Entre em contato com nossa banca de agenciamento.</p>
+        <a href="https://wa.me/5511963537305" class="btn btn-primary">Falar com um Especialista</a>
+    </div>
+</section>
+
 </main>
 
 <footer>
     <div class="footer-grid">
         <div class="footer-logo-area">
-            <span class="logo-text">RVO Negócios</span>
+            <span class="logo-text">RVO Negócios</span><br>
             <span>Agency, Business Intelligence & Brokerage</span>
             <p class="cnpj-tag">CNPJ: 14.603.862/0001-13</p>
         </div>
