@@ -22,7 +22,6 @@
 
         html { 
             scroll-behavior: smooth; 
-            /* Ajuste para os links do menu não cortarem o título das seções */
             scroll-padding-top: 120px; 
         }
 
@@ -51,8 +50,7 @@
             transition: var(--transition-smooth);
         }
 
-        /* Classe para o link da logo com ação JS */
-        .logo-trigger { cursor: pointer; border: none; background: none; display: block; }
+        .logo-link { cursor: pointer; display: block; }
         .logo { width: 210px; height: auto; transition: var(--transition-smooth); display: block; }
 
         nav { display: flex; gap: 45px; }
@@ -155,6 +153,33 @@
         .img-predio { width: 100%; height: 100%; object-fit: cover; transition: transform 2s var(--transition-smooth); }
         .card-localizacao:hover .img-predio { transform: scale(1.1); }
 
+        .map-wrapper {
+            border-radius: 2px;
+            overflow: hidden;
+            border: 1px solid rgba(201, 169, 97, 0.1);
+        }
+
+        /* --- VOLTAR AO TOPO --- */
+        #topBtn {
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            z-index: 9999;
+            background: var(--primary);
+            color: #0b1120;
+            border: none;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            font-size: 24px;
+            transition: var(--transition-smooth);
+        }
+
+        #topBtn.show { opacity: 1; visibility: visible; }
+
         /* --- FOOTER --- */
         footer {
             background: #04070e;
@@ -178,26 +203,6 @@
             text-transform: uppercase;
         }
 
-        #topBtn {
-            position: fixed;
-            bottom: 50px;
-            right: 50px;
-            z-index: 9999;
-            background: var(--primary);
-            color: #0b1120;
-            border: none;
-            width: 65px;
-            height: 65px;
-            border-radius: 50%;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            font-size: 24px;
-            transition: var(--transition-smooth);
-        }
-
-        #topBtn.show { opacity: 1; visibility: visible; }
-
         @media (max-width: 1100px) {
             section { padding: 120px 8%; }
             .grid-localizacao { grid-template-columns: 1fr; gap: 50px; }
@@ -208,11 +213,11 @@
 </head>
 <body>
 
-<button id="topBtn">↑</button>
+<button id="topBtn" onclick="voltarAoTopo()">↑</button>
 
 <header id="mainHeader">
-    <!-- SOLUÇÃO: Chamada direta para o topo absoluto via JS -->
-    <a onclick="irParaTopo()" class="logo-trigger">
+    <!-- Acionando função JavaScript para garantir o topo real -->
+    <a onclick="voltarAoTopo()" class="logo-link">
         <img src="rvo-logo.jpg" alt="RVO Negócios" class="logo">
     </a>
     <nav>
@@ -282,6 +287,14 @@
                 </div>
             </div>
         </div>
+        <div class="grid-localizacao" style="gap: 40px; margin-top: 40px;">
+            <div class="map-wrapper">
+                <iframe src="https://www.google.com/maps?q=Av+Engenheiro+Luiz+Carlos+Berrini+1681+São+Paulo&output=embed" style="width:100%;height:350px;border:0;filter: grayscale(1) invert(0.92) contrast(1.1);"></iframe>
+            </div>
+            <div class="map-wrapper">
+                <iframe src="https://www.google.com/maps?q=Rua+Lauro+Müller,+116+-+Botafogo,+Rio+de+Janeiro&output=embed" style="width:100%;height:350px;border:0;filter: grayscale(1) invert(0.92) contrast(1.1);"></iframe>
+            </div>
+        </div>
     </section>
 
     <!-- CONTATO -->
@@ -316,7 +329,7 @@
         </div>
     </div>
     <div style="text-align: center; border-top: 1px solid rgba(255,255,255,0.03); padding-top: 50px; font-size: 10px; color: var(--text-muted); letter-spacing: 2px;">
-        &copy; 2011-2026 RVO Negócios | Gestão Estratégica e Resultados.
+        &copy; 2011-2026 RVO Negócios | Conectando oportunidades. Gerando resultados.
     </div>
 </footer>
 
@@ -324,9 +337,13 @@
     const topBtn = document.getElementById("topBtn");
     const header = document.getElementById("mainHeader");
 
-    // Função para subir ao topo absoluto (Y=0)
-    function irParaTopo() {
-        window.scrollTo({ top: 0, behavior: "smooth" });
+    // Função centralizada para voltar ao topo absoluto
+    function voltarAoTopo() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        // Limpa a âncora da URL para evitar conflitos de scroll no navegador
+        if (history.pushState) {
+            history.pushState("", document.title, window.location.pathname);
+        }
     }
 
     window.onscroll = function() {
@@ -341,8 +358,6 @@
             header.style.background = "rgba(11, 17, 32, 0.7)";
         }
     };
-
-    topBtn.onclick = irParaTopo;
 </script>
 
 </body>
