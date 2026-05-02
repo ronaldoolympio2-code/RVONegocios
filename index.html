@@ -22,7 +22,6 @@
 
         html { 
             scroll-behavior: smooth; 
-            scroll-padding-top: 120px; 
         }
 
         body {
@@ -42,14 +41,14 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(11, 17, 32, 0.7);
+            background: rgba(11, 17, 32, 0.8);
             backdrop-filter: blur(25px);
             z-index: 1000;
             border-bottom: 1px solid rgba(201, 169, 97, 0.1);
             transition: var(--transition-smooth);
         }
 
-        .logo-link { cursor: pointer; display: block; border: none; background: transparent; outline: none; }
+        .logo-link { cursor: pointer; display: block; border: none; background: transparent; }
         .logo { width: 210px; height: auto; transition: var(--transition-smooth); display: block; }
 
         nav { display: flex; gap: 45px; }
@@ -65,13 +64,13 @@
         }
         nav a:hover { opacity: 1; color: var(--primary); }
 
-        /* --- HERO --- */
+        /* --- HERO (CORREÇÃO DE ESPAÇAMENTO AQUI) --- */
         .hero {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 0 10%;
+            padding: 150px 10% 80px; /* Aumentado para 150px para empurrar o slogan para baixo do menu */
             background: radial-gradient(circle at 15% 25%, rgba(201, 169, 97, 0.08) 0%, transparent 45%),
                         radial-gradient(circle at 85% 75%, rgba(31, 42, 68, 0.4) 0%, transparent 45%);
         }
@@ -88,7 +87,7 @@
         h1 span { color: var(--primary); font-style: italic; font-weight: 600; }
 
         /* --- SEÇÕES --- */
-        section { padding: 180px 12%; }
+        section { padding: 180px 12%; scroll-margin-top: 120px; }
         .section-title {
             font-family: 'Playfair Display', serif;
             font-size: clamp(36px, 5vw, 58px);
@@ -97,54 +96,30 @@
             color: #fff;
         }
         .section-title span {
-            display: block;
-            font-size: 12px;
-            text-transform: uppercase; 
-            color: var(--primary);
-            letter-spacing: 8px;
-            margin-bottom: 25px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
+            display: block; font-size: 12px; text-transform: uppercase; 
+            color: var(--primary); letter-spacing: 8px; margin-bottom: 25px;
+            font-family: 'Inter', sans-serif; font-weight: 600;
         }
 
         /* --- EXPERTISE --- */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 50px;
-        }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 50px; }
         .service-card {
-            background: var(--card-bg);
-            padding: 85px 55px;
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            transition: var(--transition-smooth);
+            background: var(--card-bg); padding: 85px 55px;
+            border: 1px solid rgba(255, 255, 255, 0.03); transition: var(--transition-smooth);
         }
-        .service-card h3 { 
-            font-family: 'Playfair Display', serif; 
-            color: var(--primary); 
-            margin-bottom: 30px; 
-            font-size: 32px; 
-        }
+        .service-card h3 { font-family: 'Playfair Display', serif; color: var(--primary); margin-bottom: 30px; font-size: 32px; }
 
         /* --- LOCALIZAÇÃO --- */
-        .grid-localizacao {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 70px;
-            margin-bottom: 80px;
-        }
-        .img-wrapper {
-            width: 100%;
-            height: 580px;
-            overflow: hidden;
-            border-radius: 2px;
-            box-shadow: 0 40px 80px rgba(0,0,0,0.6);
-        }
+        .grid-localizacao { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; margin-bottom: 80px; }
+        .img-wrapper { width: 100%; height: 580px; overflow: hidden; border-radius: 2px; box-shadow: 0 40px 80px rgba(0,0,0,0.6); }
         .img-predio { width: 100%; height: 100%; object-fit: cover; transition: transform 2s var(--transition-smooth); }
-        .card-localizacao:hover .img-predio { transform: scale(1.1); }
-        .map-wrapper { border-radius: 2px; overflow: hidden; border: 1px solid rgba(201, 169, 97, 0.1); margin-top: 20px;}
+        .map-wrapper { border-radius: 2px; overflow: hidden; border: 1px solid rgba(201, 169, 97, 0.1); margin-top: 20px; }
 
-        /* --- BOTÃO TOPO --- */
+        /* --- FOOTER --- */
+        footer { background: #04070e; padding: 140px 10% 60px; border-top: 1px solid rgba(201, 169, 97, 0.05); }
+        .footer-grid { display: grid; grid-template-columns: 2.5fr 1fr 1.5fr; gap: 100px; margin-bottom: 80px; }
+        .logo-text { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--primary); font-weight: 700; letter-spacing: 4px; text-transform: uppercase; }
+
         #topBtn {
             position: fixed; bottom: 50px; right: 50px; z-index: 9999;
             background: var(--primary); color: #0b1120; border: none;
@@ -153,32 +128,10 @@
         }
         #topBtn.show { opacity: 1; visibility: visible; }
 
-        /* --- FOOTER --- */
-        footer {
-            background: #04070e;
-            padding: 140px 10% 60px;
-            border-top: 1px solid rgba(201, 169, 97, 0.05);
-        }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2.5fr 1fr 1.5fr;
-            gap: 100px;
-            margin-bottom: 80px;
-        }
-        .logo-text {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            color: var(--primary);
-            font-weight: 700;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-        }
-
         @media (max-width: 1100px) {
             section { padding: 120px 8%; }
-            .grid-localizacao { grid-template-columns: 1fr; gap: 50px; }
-            .footer-grid { grid-template-columns: 1fr; gap: 60px; text-align: center; }
             header { padding: 25px 5%; }
+            .grid-localizacao { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -199,7 +152,7 @@
 </header>
 
 <main>
-    <section class="hero">
+    <section class="hero" id="home">
         <div class="hero-content">
             <h1>Conectando <span>oportunidades</span>. <br>Gerando <span>resultados</span>.</h1>
             <p style="font-size: 22px; color: var(--text-muted); font-weight: 300; margin: 0 auto; max-width: 800px;">Agenciamento de negócios de alto impacto nas áreas Empresarial, Pública e do Terceiro Setor.</p>
@@ -301,7 +254,6 @@
     const header = document.getElementById("mainHeader");
 
     function voltarAoTopo() {
-        // SOLUÇÃO FINAL: Limpa a âncora da URL e sobe para o zero absoluto instantaneamente
         history.pushState("", document.title, window.location.pathname);
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
@@ -315,7 +267,7 @@
             header.style.background = "rgba(11, 17, 32, 0.98)";
         } else {
             header.style.padding = "35px 10%";
-            header.style.background = "rgba(11, 17, 32, 0.7)";
+            header.style.background = "rgba(11, 17, 32, 0.8)";
         }
     };
 </script>
