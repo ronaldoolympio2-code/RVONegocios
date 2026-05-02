@@ -22,7 +22,7 @@
 
         html { 
             scroll-behavior: smooth; 
-            scroll-padding-top: 100px; 
+            scroll-padding-top: 120px; 
         }
 
         body {
@@ -34,6 +34,7 @@
             overflow-x: hidden;
         }
 
+        /* --- HEADER --- */
         header {
             position: fixed;
             top: 0; width: 100%;
@@ -49,6 +50,7 @@
             transition: var(--transition-smooth);
         }
 
+        .logo-link { cursor: pointer; display: block; border: none; background: none; padding: 0; }
         .logo { width: 210px; height: auto; transition: var(--transition-smooth); display: block; }
 
         nav { display: flex; gap: 45px; }
@@ -66,6 +68,7 @@
 
         nav a:hover { opacity: 1; color: var(--primary); }
 
+        /* --- HERO --- */
         .hero {
             height: 100vh;
             display: flex;
@@ -88,6 +91,7 @@
 
         h1 span { color: var(--primary); font-style: italic; font-weight: 600; }
 
+        /* --- SEÇÕES --- */
         section { padding: 180px 12%; }
 
         .section-title {
@@ -109,6 +113,7 @@
             font-weight: 600;
         }
 
+        /* --- EXPERTISE --- */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -120,7 +125,6 @@
             padding: 85px 55px;
             border: 1px solid rgba(255, 255, 255, 0.03);
             transition: var(--transition-smooth);
-            position: relative;
         }
 
         .service-card h3 { 
@@ -130,6 +134,7 @@
             font-size: 32px; 
         }
 
+        /* --- LOCALIZAÇÃO --- */
         .grid-localizacao {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -145,22 +150,16 @@
             box-shadow: 0 40px 80px rgba(0,0,0,0.6);
         }
 
-        .img-predio {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 2s var(--transition-smooth);
-        }
-
+        .img-predio { width: 100%; height: 100%; object-fit: cover; transition: transform 2s var(--transition-smooth); }
         .card-localizacao:hover .img-predio { transform: scale(1.1); }
 
         .map-wrapper {
             border-radius: 2px;
             overflow: hidden;
             border: 1px solid rgba(201, 169, 97, 0.1);
-            transition: var(--transition-smooth);
         }
 
+        /* --- VOLTAR AO TOPO --- */
         #topBtn {
             position: fixed;
             bottom: 50px;
@@ -176,12 +175,12 @@
             opacity: 0;
             visibility: hidden;
             font-size: 24px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
             transition: var(--transition-smooth);
         }
 
         #topBtn.show { opacity: 1; visibility: visible; }
 
+        /* --- FOOTER --- */
         footer {
             background: #04070e;
             padding: 140px 10% 60px;
@@ -212,12 +211,13 @@
         }
     </style>
 </head>
-<body id="inicio">
+<body>
 
 <button id="topBtn">↑</button>
 
 <header id="mainHeader">
-    <a href="#inicio">
+    <!-- Solução definitiva: Voltar para a coordenada zero do topo -->
+    <a onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="logo-link">
         <img src="rvo-logo.jpg" alt="RVO Negócios" class="logo">
     </a>
     <nav>
@@ -323,7 +323,7 @@
             <p><a href="#localizacao" style="color: var(--text-muted); text-decoration: none; font-size: 14px; display: block;">Unidades</a></p>
         </div>
         <div>
-            <h4 style="color: var(--primary); font-size: 11px; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 40px;">Presença Global</h4>
+            <h4 style="color: var(--primary); font-size: 11px; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 40px;">Presença</h4>
             <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 15px; font-weight: 500;">São Paulo | Rio de Janeiro</p>
             <p style="color: var(--text-muted); font-size: 14px;">contato@rvonegocios.com.br</p>
         </div>
