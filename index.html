@@ -261,6 +261,44 @@
             font-size: 11px;
             color: var(--text-muted);
         }
+
+
+
+
+
+
+
+.card-localizacao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img-predio {
+    width: 100%;
+    height: 420px; /* 🔥 IMAGEM MAIOR */
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.4s ease;
+}
+
+.img-predio:hover {
+    transform: scale(1.03);
+}
+
+.endereco {
+    margin-top: 12px;
+    font-size: 15px;
+    color: #333;
+    font-weight: 500;
+    text-align: center;
+}
+
+
+
+
+
+
     </style>
 </head>
 
@@ -315,28 +353,54 @@
 </section>
 
 <!-- 🔥 LOCALIZAÇÃO CORRIGIDA -->
-<section id="localizacao" style="background: rgba(255,255,255,0.01); text-align: center;">
+<section id="localizacao" style="background: rgba(255,255,255,0.01); text-align: center; padding: 60px 20px;">
+    
     <h2 class="section-title">
         <span>Onde estamos</span>
         Localização
     </h2>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-bottom:30px;">
-        <img src="prediosp.png" style="width:100%;height:400px;object-fit:cover;">
-        <img src="prediorj.png" style="width:100%;height:400px;object-fit:cover;">
+    <!-- 🏢 IMAGENS DOS PRÉDIOS -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-bottom:50px;">
+
+        <!-- SP -->
+        <div class="card-localizacao">
+            <img src="prediosp.png" class="img-predio">
+            <div class="endereco">
+                São Paulo - Av. Eng. Luiz Carlos Berrini, 1681
+            </div>
+        </div>
+
+        <!-- RJ -->
+        <div class="card-localizacao">
+            <img src="prediorj.png" class="img-predio">
+            <div class="endereco">
+                Rio de Janeiro - Rua Lauro Müller, 116 - Botafogo
+            </div>
+        </div>
+
     </div>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:30px;">
-        <iframe src="https://www.google.com/maps?q=Av+Engenheiro+Luiz+Carlos+Berrini+1681+São+Paulo&output=embed" style="width:100%;height:300px;border:0;"></iframe>
-        <iframe src="https://www.google.com/maps?q=Rua+Lauro+Müller,+116+-+Botafogo,+Rio+de+Janeiro+-+RJ,+CEP+22290-160&output=embed" style="width:100%;height:300px;border:0;"></iframe>
+    <!-- 🗺 MAPAS -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;">
+        <iframe src="https://www.google.com/maps?q=Av+Engenheiro+Luiz+Carlos+Berrini+1681+São+Paulo&output=embed" style="width:100%;height:320px;border:0;border-radius:10px;"></iframe>
+
+        <iframe src="https://www.google.com/maps?q=Rua+Lauro+Müller,+116+-+Botafogo,+Rio+de+Janeiro+-+RJ,+CEP+22290-160&output=embed" style="width:100%;height:320px;border:0;border-radius:10px;"></iframe>
     </div>
 
-    <div style="text-align:center;margin-top:40px;">
-        <p>Estamos estrategicamente posicionados em São Paulo e no Rio de Janeiro, transformando oportunidades em negócios em dois dos maiores centros financeiros do mundo.</p>
-        <a href="https://www.google.com/maps?q=Av+Engenheiro+Luiz+Carlos+Berrini+1681+São+Paulo" target="_blank" class="btn btn-primary">
-            
+    <!-- TEXTO FINAL -->
+    <div style="text-align:center;margin-top:50px;max-width:900px;margin-left:auto;margin-right:auto;">
+        <p>
+            Estamos estrategicamente posicionados em São Paulo e no Rio de Janeiro, transformando oportunidades em negócios em dois dos maiores centros financeiros do Brasil.
+        </p>
+
+        <a href="https://www.google.com/maps?q=Av+Engenheiro+Luiz+Carlos+Berrini+1681+São+Paulo" 
+           target="_blank" 
+           class="btn btn-primary">
+            Ver no Google Maps
         </a>
     </div>
+
 </section>
 
 <section id="contato" style="text-align: center; padding: 120px 10%;">
