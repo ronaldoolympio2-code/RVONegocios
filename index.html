@@ -357,20 +357,65 @@
             Localização
         </h2>
 
-        <div style="max-width: 900px; margin: 0 auto;">
-            <img src="predio.jpg" alt="Localização RVO Negócios"
-                 style="width: 100%; border: 1px solid rgba(201, 169, 97, 0.2); margin-bottom: 40px;">
+        #localizacao {
+    width: 100%;
+}
 
-            <p style="color: var(--text-muted); margin-bottom: 40px;">
-                Estamos estrategicamente posicionados em São Paulo, conectando negócios e oportunidades em um dos maiores centros financeiros do mundo.
-            </p>
+/* CENTRALIZA CONTEÚDO */
+.location-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+}
 
-        src="https://maps.google.com/maps?width=100%&height=600&hl=pt-BR&q=Av%20Engenheiro%20Luiz%20Carlos%20Berrini%201681%20Cidade%20Monções%20São%20Paulo%2004571-011&t=&z=16&ie=UTF8&iwloc=B&output=embed"
-                Ver no Google Maps
-            </a>
-        </div>
-    </section>
+/* LADO A LADO */
+.location-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    align-items: stretch;
+}
 
+/* BLOCOS */
+.location-img,
+.map-container {
+    height: 320px;
+    overflow: hidden;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.06);
+    transition: 0.4s ease;
+}
+
+/* HOVER SUAVE */
+.location-img:hover,
+.map-container:hover {
+    transform: translateY(-5px);
+}
+
+/* IMAGEM */
+.location-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* MAPA */
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+    .location-card {
+        grid-template-columns: 1fr;
+    }
+
+    .location-img,
+    .map-container {
+        height: 280px;
+    }
+}
     <section id="contato" style="text-align: center; padding: 120px 10%;">
         <div style="background: linear-gradient(135deg, #161e31 0%, #0b1120 100%); padding: 80px 40px; border: 1px solid rgba(201, 169, 97, 0.2);">
             <h2 class="section-title" style="margin-bottom: 20px;">Expanda seus horizontes.</h2>
