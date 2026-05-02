@@ -64,11 +64,13 @@
             width: 230px;
             height: auto;
             filter: grayscale(20%);
-            transition: var(--transition); 
-        
-          
+            transition: var(--transition);
+        .location-img,
+        .map-container 
+        height: 300px; /* diminui o frame */
 }
-               
+        
+        
         
         
         
@@ -297,68 +299,6 @@
             header { padding: 20px 5%; }
             nav { display: none; }
         }
-
-        #localizacao {
-    width: 100%;
-}
-
-/* CENTRALIZA CONTEÚDO */
-.location-wrapper {
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-/* LADO A LADO */
-.location-card {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 28px;
-    align-items: stretch;
-}
-
-/* BLOCOS */
-.location-img,
-.map-container {
-    height: 320px;
-    overflow: hidden;
-    border-radius: 16px;
-    border: 1px solid rgba(255,255,255,0.06);
-    transition: 0.4s ease;
-}
-
-/* HOVER SUAVE */
-.location-img:hover,
-.map-container:hover {
-    transform: translateY(-5px);
-}
-
-/* IMAGEM */
-.location-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* MAPA */
-.map-container iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
-}
-
-/* RESPONSIVO */
-@media (max-width: 900px) {
-    .location-card {
-        grid-template-columns: 1fr;
-    }
-
-    .location-img,
-    .map-container {
-        height: 280px;
-    }
-}
-
-            
     </style>
 </head>
 <body>
@@ -411,65 +351,29 @@
     </section>
 
     <!-- 🔥 NOVA SEÇÃO LOCALIZAÇÃO -->
-            #localizacao {
-    width: 100%;
-}
 
-/* CENTRALIZA CONTEÚDO */
-.location-wrapper {
-    max-width: 1100px;
-    margin: 0 auto;
-}
+   <section id="localizacao" style="background: rgba(255,255,255,0.01); text-align: center;">
+    <h2 class="section-title">
+        <span>Onde estamos</span>
+        Localização
+    </h2>
 
-/* LADO A LADO */
-.location-card {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 28px;
-    align-items: stretch;
-}
+    <div class="location-grid">
+        <img src="predio.jpg" alt="Localização RVO Negócios">
 
-/* BLOCOS */
-.location-img,
-.map-container {
-    height: 320px;
-    overflow: hidden;
-    border-radius: 16px;
-    border: 1px solid rgba(255,255,255,0.06);
-    transition: 0.4s ease;
-}
+        <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3655.803073740152!2d-46.69734909041075!3d-23.61139446334115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce50cc02c14a57%3A0xb54614c358648c2!2sAv.%20Engenheiro%20Lu%C3%ADs%20Carlos%20Berrini%2C%201681%20-%20Cidade%20Monções%2C%20São%20Paulo!5e0!3m2!1spt-BR!2sbr">
+        </iframe>
+    </div>
 
-/* HOVER SUAVE */
-.location-img:hover,
-.map-container:hover {
-    transform: translateY(-5px);
-}
+    <div style="text-align:center;margin-top:40px;">
+        <p>Estamos estrategicamente posicionados em São Paulo, conectando negócios e oportunidades em um dos maiores centros financeiros do mundo.</p>
+        <a href="https://www.google.com/maps?q=Av+Engenheiro+Luiz+Carlos+Berrini+1681+São+Paulo" target="_blank" class="btn btn-primary">
+            Ver no Google Maps
+        </a>
+    </div>
+</section>
 
-/* IMAGEM */
-.location-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* MAPA */
-.map-container iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
-}
-
-/* RESPONSIVO */
-@media (max-width: 900px) {
-    .location-card {
-        grid-template-columns: 1fr;
-    }
-
-    .location-img,
-    .map-container {
-        height: 280px;
-    }
-}
     <section id="contato" style="text-align: center; padding: 120px 10%;">
         <div style="background: linear-gradient(135deg, #161e31 0%, #0b1120 100%); padding: 80px 40px; border: 1px solid rgba(201, 169, 97, 0.2);">
             <h2 class="section-title" style="margin-bottom: 20px;">Expanda seus horizontes.</h2>
