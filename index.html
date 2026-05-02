@@ -20,13 +20,13 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        html { scroll-behavior: smooth; scroll-padding-top: 10vh; }
+        html { scroll-behavior: smooth; scroll-padding-top: 12vh; }
 
         body {
             background-color: var(--dark-bg);
             color: var(--text-main);
             font-family: 'Inter', sans-serif;
-            line-height: 2; /* Espaçamento de linha aumentado para elegância */
+            line-height: 2;
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
         }
@@ -35,7 +35,7 @@
         header {
             position: fixed;
             top: 0; width: 100%;
-            padding: 40px 10%; /* Mais espaço inicial */
+            padding: 40px 10%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -47,7 +47,7 @@
             transition: var(--transition-smooth);
         }
 
-        .logo { width: 210px; height: auto; transition: var(--transition-smooth); }
+        .logo { width: 210px; height: auto; transition: var(--transition-smooth); display: block; }
 
         nav { display: flex; gap: 50px; }
 
@@ -89,7 +89,7 @@
         h1 span { color: var(--primary); font-style: italic; font-weight: 600; }
 
         /* --- SEÇÕES --- */
-        section { padding: 200px 12%; } /* Padding lateral e vertical generoso */
+        section { padding: 200px 12%; }
 
         .section-title {
             font-family: 'Playfair Display', serif;
@@ -114,12 +114,12 @@
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 50px; /* Mais espaço entre os cards */
+            gap: 50px;
         }
 
         .service-card {
             background: var(--card-bg);
-            padding: 90px 60px; /* Padding interno ampliado */
+            padding: 90px 60px;
             border: 1px solid rgba(255, 255, 255, 0.03);
             transition: var(--transition-smooth);
             position: relative;
@@ -143,7 +143,7 @@
         .grid-localizacao {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 70px; /* Espaço entre unidades */
+            gap: 70px;
             margin-bottom: 80px;
         }
 
@@ -236,10 +236,13 @@
 </head>
 <body>
 
+<!-- Alvo de rolagem absoluta para a logomarca -->
+<div id="inicio-pagina"></div>
+
 <button id="topBtn">↑</button>
 
 <header id="mainHeader">
-    <a href="#topo">
+    <a href="#inicio-pagina">
         <img src="rvo-logo.jpg" alt="RVO Negócios" class="logo">
     </a>
     <nav>
@@ -250,7 +253,7 @@
     </nav>
 </header>
 
-<main id="topo">
+<main>
     <!-- HERO -->
     <section class="hero">
         <div class="hero-content">
