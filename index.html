@@ -199,17 +199,29 @@
 
 
 /* BOTÕES RESPONSIVOS */
-@media (max-width: 768px) {
+#zapBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 65px;
+    height: 65px;
+    background: #25D366;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    z-index: 9999999;
+}
 
-    #contato a {
-        display: block;
-        width: 100%;
-        max-width: 100%;
-        padding: 18px 20px !important;
-        box-sizing: border-box;
-        text-align: center;
-        white-space: normal; /* quebra linha se precisar */
+/* GARANTIR VISIBILIDADE EM DESKTOP */
+@media (min-width: 769px) {
+    #zapBtn {
+        display: flex !important;
     }
+}    }
 
 }
 
@@ -449,31 +461,5 @@ document.getElementById("menu-toggle").onclick = function() {
 
 </script>
 
-
-
-<a href="https://wa.me/5511963537305" target="_blank" id="zapBtn">
-    💬
-</a>
-
-<style>
-#zapBtn {
-    position: fixed !important;
-    bottom: 30px !important;
-    right: 30px !important;
-    width: 65px !important;
-    height: 65px !important;
-    background: #25D366 !important;
-    color: #fff !important;
-    border-radius: 50% !important;
-    font-size: 32px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    text-decoration: none !important;
-    z-index: 9999999 !important;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4) !important;
-}
-</style>
-    
 </body>
 </html>
