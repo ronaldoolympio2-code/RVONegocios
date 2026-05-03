@@ -7,25 +7,18 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
+    <!-- SEO básico -->
+    <meta name="description" content="RVO Negócios: precatórios, consultoria e intermediação empresarial. Conectamos oportunidades e geramos resultados.">
+    <meta name="keywords" content="precatórios, consultoria empresarial, intermediação de negócios, compra de empresas, investimentos">
+    <meta name="author" content="RVO Negócios">
 
+    <!-- Open Graph (WhatsApp/LinkedIn) -->
+    <meta property="og:title" content="RVO Negócios">
+    <meta property="og:description" content="Conectando oportunidades. Gerando resultados.">
+    <meta property="og:image" content="https://rvonegocios.com.br/preview.jpg">
+    <meta property="og:url" content="https://rvonegocios.com.br">
+    <meta property="og:type" content="website">
 
-
-
-<!-- SEO básico -->
-<meta name="description" content="RVO Negócios: precatórios, consultoria e intermediação empresarial. Conectamos oportunidades e geramos resultados.">
-<meta name="keywords" content="precatórios, consultoria empresarial, intermediação de negócios, compra de empresas, investimentos">
-<meta name="author" content="RVO Negócios">
-
-<!-- Open Graph (WhatsApp/LinkedIn) -->
-<meta property="og:title" content="RVO Negócios">
-<meta property="og:description" content="Conectando oportunidades. Gerando resultados.">
-<meta property="og:image" content="https://rvonegocios.com.br/preview.jpg">
-<meta property="og:url" content="https://rvonegocios.com.br">
-<meta property="og:type" content="website">
-
-
-
-    
     <style>
         :root {
             --primary: #c9a961;
@@ -39,9 +32,7 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        html { 
-            scroll-behavior: smooth; 
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             background-color: var(--dark-bg);
@@ -50,7 +41,6 @@
             line-height: 2;
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
-            
         }
 
         /* --- HEADER --- */
@@ -66,9 +56,6 @@
             z-index: 1000;
             border-bottom: 1px solid rgba(201, 169, 97, 0.1);
             transition: var(--transition-smooth);
-
-
-
         }
 
         .logo-link { cursor: pointer; display: block; border: none; background: transparent; }
@@ -87,15 +74,22 @@
         }
         nav a:hover { opacity: 1; color: var(--primary); }
 
+        #menu-toggle {
+            display: none;
+            font-size: 28px;
+            color: #fff;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
 
-
-        /* --- HERO (CORREÇÃO DE ESPAÇAMENTO AQUI) --- */
+        /* --- HERO --- */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 150px 10% 80px; /* Aumentado para 150px para empurrar o slogan para baixo do menu */
+            padding: 150px 10% 80px;
             background: radial-gradient(circle at 15% 25%, rgba(201, 169, 97, 0.08) 0%, transparent 45%),
                         radial-gradient(circle at 85% 75%, rgba(31, 42, 68, 0.4) 0%, transparent 45%);
         }
@@ -110,8 +104,6 @@
             color: #fff;
         }
         h1 span { color: var(--primary); font-style: italic; font-weight: 600; }
-
-
 
         /* --- SEÇÕES --- */
         section { padding: 180px 12%; scroll-margin-top: 120px; }
@@ -147,205 +139,63 @@
         .footer-grid { display: grid; grid-template-columns: 2.5fr 1fr 1.5fr; gap: 100px; margin-bottom: 80px; }
         .logo-text { font-family: 'Playfair Display', serif; font-size: 28px; color: var(--primary); font-weight: 700; letter-spacing: 4px; text-transform: uppercase; }
 
+        /* BOTÕES FLUTUANTES */
         #topBtn {
-            position: fixed; bottom: 50px; right: 50px; z-index: 9999;
+            position: fixed; bottom: 95px; right: 25px; z-index: 9998;
             background: var(--primary); color: #0b1120; border: none;
-            width: 65px; height: 65px; border-radius: 50%; cursor: pointer;
+            width: 58px; height: 58px; border-radius: 50%; cursor: pointer;
             opacity: 0; visibility: hidden; font-size: 24px; transition: var(--transition-smooth);
+            display: flex; align-items: center; justify-content: center;
         }
         #topBtn.show { opacity: 1; visibility: visible; }
 
+        .whatsapp-float {
+            position: fixed; bottom: 25px; right: 25px; width: 60px; height: 60px;
+            background-color: #25D366; color: #fff; border-radius: 50%;
+            font-size: 30px; display: flex; align-items: center; justify-content: center;
+            text-decoration: none; z-index: 9999; box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+            transition: 0.3s;
+        }
+        .whatsapp-float:hover { transform: scale(1.08); }
+
+        /* RESPONSIVIDADE */
         @media (max-width: 1100px) {
             section { padding: 120px 8%; }
             header { padding: 25px 5%; }
             .grid-localizacao { grid-template-columns: 1fr; }
-
-
-@media (max-width: 768px) {
-    footer {
-        padding-bottom: 140px;
-    }
-}
-
-
         }
 
-
-
-
-
-#menu-toggle {
-    display: none;
-    font-size: 28px;
-    color: #fff;
-    cursor: pointer;
-}
-
-@media (max-width: 768px) {
-
-    nav {
-        position: absolute;
-        top: 80px;
-        left: 0;
-        width: 100%;
-        background: rgba(11,17,32,0.98);
-        flex-direction: column;
-        align-items: center;
-        gap: 25px;
-        padding: 30px 0;
-        display: none;
-    }
-
-    nav.active {
-        display: flex;
-    }
-
-    #menu-toggle {
-        display: block;
-    }
-}
-
-
-
-
-
-
-/* BOTÕES RESPONSIVOS */
-/* WHATSAPP */
-#zapBtn {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    width: 58px;
-    height: 58px;
-    background: #25D366;
-    color: #fff;
-    border-radius: 50%;
-    font-size: 26px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-}
-
-/* TOPO */
-#topBtn {
-    bottom: 95px; /* acima do zap */
-    right: 25px;
-    z-index: 9998;
-}
-
-
-/* GARANTIR VISIBILIDADE EM DESKTOP */
-@media (min-width: 769px) {
-    #zapBtn {
-        display: flex !important;
-
-
-#zapBtn,
-#topBtn {
-    display: flex !important;
-}
-
-
-    }
-}    }
-
-}
-
-
-
-
-
-/* FOOTER AJUSTE MOBILE */
-@media (max-width: 768px) {
-
-    .footer-grid {
-        grid-template-columns: 1fr !important;
-        text-align: center;
-        gap: 40px;
-    }
-
-    footer {
-        padding: 100px 5% 40px;
-    }
-
-    footer a,
-    footer p {
-        word-break: break-word;
-
-
-
-@media (max-width: 768px) {
-    footer {
-        padding-bottom: 120px; /* espaço pros botões */
-    }
-}
-
-
-
-    }
-
-}
-
-
-
-<style>
-.whatsapp-float {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    width: 60px;
-    height: 60px;
-    background-color: #25D366;
-    color: #fff;
-    border-radius: 50%;
-    font-size: 30px;
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    z-index: 999999 !important;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-}
-
-.whatsapp-float:hover {
-    transform: scale(1.08);
-}
-</style>
-
-
-
-body {
-    overflow-x: hidden;
-}
-
-
-
-
-
-
-
-
-
+        @media (max-width: 768px) {
+            nav {
+                position: absolute; top: 80px; left: 0; width: 100%;
+                background: rgba(11,17,32,0.98); flex-direction: column;
+                align-items: center; gap: 25px; padding: 30px 0; display: none;
+            }
+            nav.active { display: flex; }
+            #menu-toggle { display: block; }
+            .footer-grid { grid-template-columns: 1fr !important; text-align: center; gap: 40px; }
+            footer { padding: 100px 5% 120px; }
+        }
     </style>
 </head>
-
-
 
 <body>
 
 <button id="topBtn" onclick="voltarAoTopo()">↑</button>
+<a href="https://wa.me/5511963537305" target="_blank" class="whatsapp-float" id="zapBtn">💬</a>
 
 <header id="mainHeader">
     <button onclick="voltarAoTopo()" class="logo-link">
         <img src="rvo-logo.jpg" alt="RVO Negócios" class="logo">
     </button>
-    <nav>
-        <a href="#sobre">Institucional</a>
-        <a href="#servicos">Expertise</a>
-        <a href="#localizacao">Unidades</a>
-        <a href="#contato">Contato</a>
+    
+    <button id="menu-toggle" onclick="toggleMenu()">☰</button>
+    
+    <nav id="mainNav">
+        <a href="#sobre" onclick="toggleMenu()">Institucional</a>
+        <a href="#servicos" onclick="toggleMenu()">Expertise</a>
+        <a href="#localizacao" onclick="toggleMenu()">Unidades</a>
+        <a href="#contato" onclick="toggleMenu()">Contato</a>
     </nav>
 </header>
 
@@ -447,12 +297,9 @@ body {
     </div>
 </footer>
 
-
-<a href="https://wa.me/5511963537305" target="_blank" id="zapBtn">💬</a>
-
-
 <script>
 const topBtn = document.getElementById("topBtn");
+const nav = document.getElementById("mainNav");
 
 window.onscroll = function() {
     if (window.scrollY > 300) {
@@ -464,6 +311,12 @@ window.onscroll = function() {
 
 function voltarAoTopo() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function toggleMenu() {
+    if (window.innerWidth <= 768) {
+        nav.classList.toggle("active");
+    }
 }
 </script>
 
