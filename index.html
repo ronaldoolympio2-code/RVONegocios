@@ -50,6 +50,7 @@
             line-height: 2;
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
+            
         }
 
         /* --- HEADER --- */
@@ -425,41 +426,7 @@ body {
     </div>
 </footer>
 
-<script>
-    const topBtn = document.getElementById("topBtn");
-    const header = document.getElementById("mainHeader");
 
-    function voltarAoTopo() {
-        history.pushState("", document.title, window.location.pathname);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    window.onscroll = function() {
-        if (window.pageYOffset > 600) { topBtn.classList.add("show"); } 
-        else { topBtn.classList.remove("show"); }
-
-        if (window.pageYOffset > 100) {
-            header.style.padding = "20px 10%";
-            header.style.background = "rgba(11, 17, 32, 0.98)";
-        } else {
-            header.style.padding = "35px 10%";
-            header.style.background = "rgba(11, 17, 32, 0.8)";
-        }
-    };
-
-
-
-
-
-
-document.getElementById("menu-toggle").onclick = function() {
-    document.querySelector("header nav").classList.toggle("active");
-};
-
-
-
-
-</script>
 
 </body>
 </html>
