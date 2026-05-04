@@ -8,11 +8,14 @@
     <style>
         :root {
             --primary: #c9a961;
+            --primary-light: #dec68b;
             --dark-bg: #0b1120;
             --text-main: #f3f4f6;
+            --text-muted: #a1a1aa;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
         body { background: var(--dark-bg); color: var(--text-main); font-family: 'Inter', sans-serif; overflow-x: hidden; }
 
         header {
@@ -31,7 +34,7 @@
         .portal-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(40px, 6vw, 80px); margin-bottom: 20px; }
         .portal-hero h1 span { color: var(--primary); }
 
-        /* GRID DE VERTICAIS (O CORAÇÃO DO PORTAL) */
+        /* GRID DE VERTICAIS */
         .verticals-grid {
             padding: 100px 10%;
             display: grid;
@@ -52,7 +55,6 @@
             overflow: hidden;
         }
 
-        /* Destaque para a Vertical de Precatórios */
         .vertical-card.featured {
             border: 1px solid var(--primary);
             box-shadow: 0 10px 30px rgba(201, 169, 97, 0.1);
@@ -80,10 +82,37 @@
             transform: rotate(45deg);
         }
 
+        /* --- BOTÕES FLUTUANTES PADRONIZADOS --- */
+        .whatsapp-float {
+            position: fixed; bottom: 25px; right: 25px;
+            width: 65px; height: 65px; z-index: 1000; transition: transform 0.3s ease;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); }
+        .whatsapp-float img { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 5px 15px rgba(0,0,0,0.4)); }
+
+        #topBtn {
+            position: fixed; bottom: 105px; right: 25px;
+            width: 65px; height: 65px; z-index: 998;
+            background: var(--primary); color: #0b1120; border: none;
+            border-radius: 50%; cursor: pointer; opacity: 0; visibility: hidden;
+            transition: all 0.4s ease; display: flex; align-items: center; justify-content: center;
+            font-size: 24px; font-weight: bold; box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+        }
+        #topBtn.show { opacity: 1; visibility: visible; }
+        #topBtn:hover { transform: scale(1.1); background: var(--primary-light); }
+
         footer { padding: 60px 10%; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); opacity: 0.6; font-size: 12px; }
     </style>
 </head>
 <body>
+
+<!-- Botão Topo -->
+<button id="topBtn" onclick="voltarAoTopo()">▲</button>
+
+<!-- Botão WhatsApp -->
+<a href="https://wa.me/5511963537305" target="_blank" rel="noopener" class="whatsapp-float">
+    <img src="whatsapp-business.png" alt="WhatsApp Business">
+</a>
 
 <header>
     <img src="rvo-logo.jpg" alt="RVO Negócios" class="logo">
@@ -106,14 +135,14 @@
     </a>
 
     <!-- VERTICAL M&A -->
-    <a href="#contato" class="vertical-card">
+    <a href="https://wa.me/5511963537305" class="vertical-card">
         <h2>Agency, Business Intelligence & Brokerage</h2>
-        <p>Agenciamento de negócios.</p>
+        <p>Agenciamento de negócios de alto impacto e inteligência corporativa.</p>
         <span class="btn-enter">Saiba Mais</span>
     </a>
 
     <!-- VERTICAL REAL ESTATE -->
-    <a href="#contato" class="vertical-card">
+    <a href="https://wa.me/5511963537305" class="vertical-card">
         <h2>Real Estate</h2>
         <p>Intermediação de ativos imobiliários de alto padrão e oportunidades corporativas.</p>
         <span class="btn-enter">Saiba Mais</span>
@@ -121,13 +150,31 @@
 </div>
 
 <section id="contato" style="padding: 100px 10%; text-align: center;">
-    <h3 style="font-family: 'Playfair Display'; font-size: 32px; margin-bottom: 20px;">Portal <scan>RVO Negócios</scan>
+    <h3 style="font-family: 'Playfair Display'; font-size: 32px; margin-bottom: 20px;">Portal <span>RVO Negócios</span></h3>
     <p style="opacity: 0.6;">SÃO PAULO | RIO DE JANEIRO</p>
 </section>
 
 <footer>
     &copy; 2011-2026 RVO Negócios | Todos os direitos reservados.
 </footer>
+
+<script>
+    const topBtn = document.getElementById("topBtn");
+
+    // Lógica para mostrar/esconder o botão de topo ao rolar
+    window.onscroll = function() {
+        if (window.scrollY > 400) { 
+            topBtn.classList.add("show"); 
+        } else { 
+            topBtn.classList.remove("show"); 
+        }
+    };
+
+    // Função de voltar ao topo suave
+    function voltarAoTopo() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+</script>
 
 </body>
 </html>
