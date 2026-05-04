@@ -3,14 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>RVO Negócios | Conectando oportunidades. Gerando resultados.</title>
+    <title>RVO Negócios | Precatórios e Intermediação Estratégica</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-    <!-- SEO -->
-    <meta name="description" content="RVO Negócios: precatórios, consultoria e intermediação empresarial.">
-    <meta name="keywords" content="precatórios, consultoria empresarial, intermediação de negócios">
-    <meta name="author" content="RVO Negócios">
 
     <style>
         :root {
@@ -39,11 +34,11 @@
         header {
             position: fixed;
             top: 0; width: 100%;
-            padding: 30px 10%;
+            padding: 25px 10%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(11, 17, 32, 0.7);
+            background: rgba(11, 17, 32, 0.8);
             backdrop-filter: blur(15px);
             z-index: 1000;
             border-bottom: 1px solid rgba(201, 169, 97, 0.1);
@@ -51,9 +46,9 @@
         }
 
         .logo-link { cursor: pointer; border: none; background: transparent; }
-        .logo { width: 200px; height: auto; display: block; }
+        .logo { width: 140px; height: auto; display: block; }
 
-        nav { display: flex; gap: 40px; }
+        nav { display: flex; gap: 35px; }
         nav a {
             color: var(--text-main);
             text-decoration: none;
@@ -66,156 +61,120 @@
         }
         nav a:hover { opacity: 1; color: var(--primary); }
 
-        #menu-toggle {
-            display: none;
-            font-size: 28px;
-            color: #fff;
-            cursor: pointer;
-            background: none;
-            border: none;
-        }
+        #menu-toggle { display: none; font-size: 28px; color: #fff; cursor: pointer; background: none; border: none; }
 
-        /* --- SLIDER / HERO --- */
-        .slider-container {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            overflow: hidden;
-            background: #000;
-        }
-
+        /* --- SLIDER HERO --- */
+        .slider-container { position: relative; width: 100%; height: 100vh; overflow: hidden; background: #000; }
         .slide {
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            opacity: 0;
-            transition: opacity 1.5s ease-in-out;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 0 10%;
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            opacity: 0; transition: opacity 1.5s ease-in-out;
+            display: flex; align-items: center; justify-content: center;
+            text-align: center; padding: 0 10%;
         }
-
         .slide.active { opacity: 1; }
 
-        /* Estilização dos Fundos dos Banners */
-        .slide:nth-child(1) { background: linear-gradient(rgba(11,17,32,0.8), rgba(11,17,32,0.8)), url('banner1.jpg') center/cover; }
-        .slide:nth-child(2) { background: linear-gradient(rgba(11,17,32,0.8), rgba(11,17,32,0.8)), url('banner2.jpg') center/cover; }
-        .slide:nth-child(3) { background: linear-gradient(rgba(11,17,32,0.8), rgba(11,17,32,0.8)), url('banner3.jpg') center/cover; }
+        /* Fundos dos Banners (Substituir pelos seus arquivos) */
+        .slide:nth-child(1) { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('banner1.jpg') center/cover; }
+        .slide:nth-child(2) { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('banner2.jpg') center/cover; }
+        .slide:nth-child(3) { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('banner3.jpg') center/cover; }
 
         .hero-content h1 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(46px, 8vw, 90px);
+            font-size: clamp(48px, 8vw, 90px);
             line-height: 1.1;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             color: #fff;
+            font-weight: 700;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
         .hero-content h1 span { color: var(--primary); font-style: italic; }
+        .hero-content p {
+            font-size: clamp(20px, 2.5vw, 28px);
+            color: var(--text-muted);
+            margin-bottom: 50px;
+            max-width: 850px;
+            margin-left: auto; margin-right: auto;
+        }
 
         .slider-dots {
-            position: absolute;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 12px;
-            z-index: 20;
+            position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
+            display: flex; gap: 12px; z-index: 20;
         }
-
-        .dot {
-            width: 10px; height: 10px;
-            border: 1px solid var(--primary);
-            border-radius: 50%;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
+        .dot { width: 12px; height: 12px; border: 1px solid var(--primary); border-radius: 50%; cursor: pointer; transition: 0.3s; }
         .dot.active { background: var(--primary); }
 
         /* --- BOTÕES --- */
         .btn-premium {
-            border: 1px solid var(--primary);
-            color: var(--primary);
-            text-decoration: none;
-            padding: 20px 50px;
-            font-weight: 600;
-            font-size: 11px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            transition: 0.4s;
-            display: inline-block;
+            border: 1px solid var(--primary); color: var(--primary);
+            text-decoration: none; padding: 20px 50px; font-weight: 600;
+            font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+            transition: 0.4s; display: inline-block;
         }
-        .btn-premium:hover { background: var(--primary); color: var(--dark-bg); }
+        .btn-premium:hover { background: var(--primary); color: var(--dark-bg); transform: translateY(-3px); }
 
-        /* --- WHATSAPP VERDADEIRO --- */
+        /* --- WHATSAPP E TOPO (ALINHADOS) --- */
         .whatsapp-float {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            width: 65px;
-            height: 65px;
-            z-index: 1000;
-            transition: transform 0.3s ease;
+            position: fixed; bottom: 25px; right: 25px;
+            width: 65px; height: 65px; z-index: 1000; transition: transform 0.3s ease;
         }
         .whatsapp-float:hover { transform: scale(1.1); }
-        .whatsapp-float img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.4));
+        .whatsapp-float img { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 5px 15px rgba(0,0,0,0.4)); }
+
+        #topBtn {
+            position: fixed; bottom: 105px; right: 25px;
+            width: 65px; height: 65px; z-index: 998;
+            background: var(--primary); color: #0b1120; border: none;
+            border-radius: 50%; cursor: pointer; opacity: 0; visibility: hidden;
+            transition: all 0.4s ease; display: flex; align-items: center; justify-content: center;
+            font-size: 24px; font-weight: bold; box-shadow: 0 5px 15px rgba(0,0,0,0.4);
         }
+        #topBtn.show { opacity: 1; visibility: visible; }
+        #topBtn:hover { transform: scale(1.1); background: var(--primary-light); }
 
         /* --- SEÇÕES --- */
         section { padding: 120px 10%; scroll-margin-top: 100px; }
         .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(32px, 5vw, 54px);
-            margin-bottom: 80px;
-            text-align: center;
+            font-family: 'Playfair Display', serif; font-size: clamp(32px, 5vw, 54px);
+            margin-bottom: 80px; text-align: center;
         }
         .section-title span {
             display: block; font-size: 12px; text-transform: uppercase; 
             color: var(--primary); letter-spacing: 6px; margin-bottom: 20px;
-            font-family: 'Inter', sans-serif; font-weight: 600;
+            font-family: 'Inter', sans-serif;
         }
 
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
-        .service-card {
-            background: var(--card-bg); padding: 60px 45px;
-            border: 1px solid rgba(255, 255, 255, 0.05); transition: 0.4s;
+        /* --- GRID SERVIÇOS --- */
+        .services-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .service-box {
+            background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(201, 169, 97, 0.1);
+            padding: 50px 40px; transition: var(--transition-smooth); position: relative;
         }
-        .service-card:hover { border-color: var(--primary); background: rgba(255,255,255,0.04); }
-        .service-card h3 { font-family: 'Playfair Display', serif; color: var(--primary); margin-bottom: 25px; font-size: 30px; }
+        .service-box:hover { background: rgba(201, 169, 97, 0.05); border-color: var(--primary); transform: translateY(-10px); }
+        .service-number { font-family: 'Playfair Display', serif; font-size: 40px; color: rgba(201, 169, 97, 0.15); position: absolute; top: 20px; right: 30px; }
 
+        /* --- GRID ARTIGOS --- */
+        .articles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .article-card { text-decoration: none; color: inherit; display: block; }
+        .article-image { width: 100%; height: 220px; background-color: #1a243a; margin-bottom: 20px; overflow: hidden; border-radius: 2px; }
+        .article-image img { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; transition: 0.5s; }
+        .article-card:hover .article-image img { opacity: 1; transform: scale(1.05); }
+        .article-tag { color: var(--primary); font-size: 10px; text-transform: uppercase; letter-spacing: 2px; display: block; margin-bottom: 10px; }
+        .article-title { font-family: 'Playfair Display', serif; font-size: 22px; line-height: 1.4; margin-bottom: 15px; transition: 0.3s; }
+        .article-card:hover .article-title { color: var(--primary); }
+
+        /* --- LOCALIZAÇÃO --- */
         .grid-localizacao { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
         .img-wrapper { width: 100%; height: 450px; overflow: hidden; border-radius: 2px; }
         .img-predio { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); transition: 1s; }
         .img-wrapper:hover .img-predio { filter: grayscale(0%); transform: scale(1.05); }
 
+        /* --- FOOTER --- */
         footer { background: #04070e; padding: 100px 10% 40px; border-top: 1px solid rgba(201, 169, 97, 0.05); }
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 80px; margin-bottom: 60px; }
 
-        #topBtn {
-            position: fixed; bottom: 105px; right: 25px; z-index: 998;
-            background: var(--primary); color: #0b1120; border: none;
-            width: 63px; height: 63px; border-radius: 50%; cursor: pointer;
-            opacity: 0; visibility: hidden; transition: 0.4s;
-        }
-        #topBtn.show { opacity: 1; visibility: visible; }
-
-        /* RESPONSIVIDADE */
         @media (max-width: 992px) {
-            .grid-localizacao { grid-template-columns: 1fr; }
-            .footer-grid { grid-template-columns: 1fr; text-align: center; gap: 40px; }
-        }
-        @media (max-width: 768px) {
-            header { padding: 20px 5%; }
-            nav {
-                position: fixed; top: 0; right: -100%; width: 100%; height: 100vh;
-                background: var(--dark-bg); flex-direction: column; 
-                justify-content: center; align-items: center; transition: 0.5s;
-            }
+            .grid-localizacao, .footer-grid { grid-template-columns: 1fr; text-align: center; }
+            nav { position: fixed; top: 0; right: -100%; width: 100%; height: 100vh; background: var(--dark-bg); flex-direction: column; justify-content: center; align-items: center; transition: 0.5s; }
             nav.active { right: 0; }
             #menu-toggle { display: block; z-index: 1001; }
         }
@@ -224,12 +183,10 @@
 
 <body>
 
-<!-- Botão Topo -->
-<button id="topBtn" onclick="voltarAoTopo()">↑</button>
+<button id="topBtn" onclick="voltarAoTopo()">▲</button>
 
-<!-- Botão WhatsApp Verdadeiro -->
 <a href="https://wa.me/5511963537305" target="_blank" rel="noopener" class="whatsapp-float">
-    <img src="whatsappbusiness.png" alt="WhatsApp Business">
+    <img src="whatsapp-business.png" alt="WhatsApp Business">
 </a>
 
 <header id="mainHeader">
@@ -239,34 +196,35 @@
     <button id="menu-toggle" onclick="toggleMenu()">☰</button>
     <nav id="mainNav">
         <a href="#sobre" onclick="fecharMenu()">Institucional</a>
-        <a href="#servicos" onclick="fecharMenu()">Expertise</a>
+        <a href="#servicos-detalhes" onclick="fecharMenu()">Serviços</a>
+        <a href="#artigos" onclick="fecharMenu()">Precatórios</a>
         <a href="#localizacao" onclick="fecharMenu()">Unidades</a>
         <a href="#contato" onclick="fecharMenu()">Contato</a>
     </nav>
 </header>
 
 <main>
-    <!-- Rodízio de Banners (Hero) -->
+    <!-- SLIDER HERO -->
     <section class="slider-container" id="home">
         <div class="slide active">
             <div class="hero-content">
-                <h1>RVO <span>NEGÓCIOS</span></h1>
-                <p style="font-size: 20px; color: var(--text-muted); font-weight: 300; margin-bottom: 40px;">Agenciamento de negócios de alto impacto nas áreas Privada, Pública e no Terceiro Setor.</p>
-                <a href="#contato" class="btn-premium">Saiba Mais</a>
+                <h1>Conectando <span>oportunidades</span>.</h1>
+                <p>Agenciamento estratégico de ativos de alto impacto.</p>
+                <a href="#contato" class="btn-premium">Consultoria Estratégica</a>
             </div>
         </div>
         <div class="slide">
             <div class="hero-content">
-                <h1>Conectando <span>Oportunidades</span>.</h1>
-                <p style="font-size: 20px; color: var(--text-muted); font-weight: 300; margin-bottom: 40px;">O elo vital entre grandes ativos e investidores qualificados.</p>
+                <h1>Liderança em <span>Precatórios</span>.</h1>
+                <p>Liquidez e segurança jurídica para seus créditos judiciais.</p>
+                <a href="#artigos" class="btn-premium">Ver Soluções</a>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="hero-content">
+                <h1>Gerando <span>resultados</span>.</h1>
+                <p>O elo vital entre grandes ativos e investidores qualificados.</p>
                 <a href="https://wa.me/5511963537305" class="btn-premium">Falar com Especialista</a>
-            </div>
-        </div>
-        <div class="slide">
-            <div class="hero-content">
-                <h1>Gerando<br> <span>Resultados</span>.</h1>
-                <p style="font-size: 20px; color: var(--text-muted); font-weight: 300; margin-bottom: 40px;">Expertise técnica e governança em ativos de alto valor.</p>
-                <a href="#servicos" class="btn-premium">Nossa Expertise</a>
             </div>
         </div>
         <div class="slider-dots">
@@ -276,63 +234,85 @@
         </div>
     </section>
 
+    <!-- SOBRE -->
     <section id="sobre">
         <div style="max-width: 850px; margin: 0 auto; text-align: center;">
             <h2 class="section-title"><span>Desde 2011</span>Nossa Essência</h2>
-            <p style="font-size: 22px; color: var(--text-muted); margin-bottom: 40px; font-weight: 300;">Fundada sobre os pilares da ética e da precisão técnica, a RVO Negócios atua na intermediação de grandes ativos.</p>
-            <p style="font-size: 16px; opacity: 0.7;">Arquitetamos o sucesso de cada operação através de uma curadoria rigorosa, garantindo transparência absoluta.</p>
+            <p style="font-size: 22px; color: var(--text-muted); margin-bottom: 40px; font-weight: 300;">Fundada sobre os pilares da ética e precisão, a RVO Negócios é referência na intermediação de ativos complexos.</p>
         </div>
     </section>
 
-    <section id="servicos" style="background: rgba(255,255,255,0.015);">
-        <h2 class="section-title"><span>Estratégia</span>Expertise Corporativa</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>Agenciamento</h3>
-                <p>Curadoria rigorosa de parceiros para alinhamento absoluto com o core business de cada operação.</p>
+    <!-- SERVIÇOS -->
+    <section id="servicos-detalhes" style="background: rgba(255,255,255,0.01);">
+        <h2 class="section-title"><span>Expertise</span>Nossas Soluções</h2>
+        <div class="services-container">
+            <div class="service-box">
+                <span class="service-number">01</span>
+                <h3>Antecipação</h3>
+                <p>Soluções imediatas de liquidez para portadores de precatórios federais e estaduais.</p>
             </div>
-            <div class="service-card">
-                <h3>Facilitação</h3>
-                <p>Gestão técnica de ativos de alto valor e acesso a oportunidades exclusivas no mercado.</p>
+            <div class="service-box">
+                <span class="service-number">02</span>
+                <h3>M&A Advisory</h3>
+                <p>Intermediação qualificada para fusões, aquisições e venda de ativos empresariais.</p>
             </div>
-            <div class="service-card">
-                <h3>Matching</h3>
-                <p>Conexão assertiva entre capital e projetos de alta performance sob governança absoluta.</p>
+            <div class="service-box">
+                <span class="service-number">03</span>
+                <h3>Compliance</h3>
+                <p>Análise técnica e jurídica rigorosa para garantir segurança em todas as operações.</p>
             </div>
         </div>
     </section>
 
-    <section id="localizacao">
-        <h2 class="section-title"><span>Unidades</span>Presença</h2>
+    <!-- ARTIGOS PRECATÓRIOS -->
+    <section id="artigos">
+        <h2 class="section-title"><span>Insights</span>Especialista em Precatórios</h2>
+        <div class="articles-grid">
+            <a href="#" class="article-card">
+                <div class="article-image"><img src="artigo1.jpg" alt="Liquidez"></div>
+                <span class="article-tag">Mercado Financeiro</span>
+                <h3 class="article-title">A Liquidez dos Precatórios Federais no Cenário de 2026.</h3>
+            </a>
+            <a href="#" class="article-card">
+                <div class="article-image"><img src="artigo2.jpg" alt="Empresas"></div>
+                <span class="article-tag">Estratégia</span>
+                <h3 class="article-title">Como empresas utilizam créditos judiciais para desalavancagem.</h3>
+            </a>
+            <a href="#" class="article-card">
+                <div class="article-image"><img src="artigo3.jpg" alt="Segurança"></div>
+                <span class="article-tag">Segurança Jurídica</span>
+                <h3 class="article-title">O papel da Due Diligence na cessão de ativos reais.</h3>
+            </a>
+        </div>
+    </section>
+
+    <!-- LOCALIZAÇÃO -->
+    <section id="localizacao" style="background: rgba(255,255,255,0.01);">
+        <h2 class="section-title"><span>Unidades</span>Presença Nacional</h2>
         <div class="grid-localizacao">
-            <div class="card-localizacao">
-                <div class="img-wrapper"><img src="prediosp.png" class="img-predio" alt="SP Corporate"></div>
+            <div>
+                <div class="img-wrapper"><img src="prediosp.png" class="img-predio" alt="São Paulo"></div>
                 <div style="text-align: center; margin-top: 30px;">
                     <strong style="color: var(--primary); letter-spacing: 2px;">SÃO PAULO</strong><br>
                     Av. Eng. Luiz Carlos Berrini, 1681 - Itaim Bibi
                 </div>
-                <div style="margin-top:20px; border-radius:4px; overflow:hidden;">
-                    <iframe src="https://www.google.com/maps?q=Av+Engenheiro+Luiz+Carlos+Berrini+1681+São+Paulo&output=embed" style="width:100%;height:250px;border:0;filter: grayscale(1) invert(0.9);"></iframe>
-                </div>
             </div>
-            <div class="card-localizacao">
-                <div class="img-wrapper"><img src="prediorj.png" class="img-predio" alt="Torre Rio Sul"></div>
+            <div>
+                <div class="img-wrapper"><img src="prediorj.png" class="img-predio" alt="Rio de Janeiro"></div>
                 <div style="text-align: center; margin-top: 30px;">
                     <strong style="color: var(--primary); letter-spacing: 2px;">RIO DE JANEIRO</strong><br>
                     Rua Lauro Müller, 116 - Botafogo
-                </div>
-                <div style="margin-top:20px; border-radius:4px; overflow:hidden;">
-                    <iframe src="https://www.google.com/maps?q=Rua+Lauro+Müller,+116+-+Botafogo,+Rio+de+Janeiro&output=embed" style="width:100%;height:250px;border:0;filter: grayscale(1) invert(0.9);"></iframe>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- CONTATO -->
     <section id="contato">
-        <div style="background: linear-gradient(135deg, #111a2e 0%, #080d1a 100%); padding: 80px 20px; text-align: center; border: 1px solid rgba(201, 169, 97, 0.2);">
-            <h2 class="section-title" style="margin-bottom: 20px;">Expanda seus horizontes.</h2>
-            <p style="margin-bottom: 40px; color: var(--text-muted);">Entre em contato para uma análise estratégica exclusiva.</p>
-            <a href="https://wa.me/5511963537305" class="btn-premium">Falar com um Especialista</a>
+        <div style="background: linear-gradient(135deg, #111a2e, #080d1a); padding: 80px 20px; text-align: center; border: 1px solid rgba(201, 169, 97, 0.2);">
+            <h2 class="section-title" style="margin-bottom: 20px;">Expanda seus resultados.</h2>
+            <p style="margin-bottom: 40px; color: var(--text-muted);">Agende uma reunião estratégica com nossos especialistas.</p>
+            <a href="https://wa.me/5511963537305" class="btn-premium">Falar com Diretoria</a>
         </div>
     </section>
 </main>
@@ -341,20 +321,17 @@
     <div class="footer-grid">
         <div>
             <p style="font-family: 'Playfair Display'; font-size: 24px; color: var(--primary); font-weight: 700;">RVO Negócios</p>
-            <p style="margin-top: 20px; font-size: 12px; color: var(--text-muted);">
-                Agency, Business Intelligence & Brokerage<br>
-                CNPJ: 14.603.862/0001-13
-            </p>
+            <p style="margin-top: 20px; font-size: 12px; color: var(--text-muted);">CNPJ: 14.603.862/0001-13</p>
         </div>
         <div>
-            <h4 style="color: var(--primary); font-size: 11px; text-transform: uppercase; margin-bottom: 20px;">Links</h4>
-            <p style="margin-bottom: 12px;"><a href="#sobre" style="color: var(--text-muted); text-decoration: none; font-size: 14px; transition: 0.3s;">Institucional</a></p>
-            <p style="margin-bottom: 12px;"><a href="#servicos" style="color: var(--text-muted); text-decoration: none; font-size: 14px; transition: 0.3s;">Expertise</a></p>
-            <p style="margin-bottom: 12px;"><a href="#localizacao" style="color: var(--text-muted); text-decoration: none; font-size: 14px; transition: 0.3s;">Unidades</a></p>
-            </div>
+            <h4 style="color: var(--primary); font-size: 11px; text-transform: uppercase; margin-bottom: 20px;">Navegação</h4>
+            <p><a href="#sobre" style="color: var(--text-muted); text-decoration: none; font-size: 14px; display: block; margin-bottom: 10px;">Institucional</a></p>
+            <p><a href="#servicos-detalhes" style="color: var(--text-muted); text-decoration: none; font-size: 14px; display: block; margin-bottom: 10px;">Serviços</a></p>
+            <p><a href="#localizacao" style="color: var(--text-muted); text-decoration: none; font-size: 14px; display: block;">Unidades</a></p>
+        </div>
         <div>
-            <h4 style="color: var(--primary); font-size: 11px; text-transform: uppercase; margin-bottom: 20px;">Presença</h4>
-            <p style="color: var(--text-muted); font-size: 14px;">São Paulo | Rio de Janeiro | Brasil</p>
+            <h4 style="color: var(--primary); font-size: 11px; text-transform: uppercase; margin-bottom: 20px;">Contato</h4>
+            <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 10px;">São Paulo | Rio de Janeiro</p>
             <p style="color: var(--text-muted); font-size: 14px;">contato@rvonegocios.com.br</p>
         </div>
     </div>
@@ -364,7 +341,6 @@
 </footer>
 
 <script>
-    // --- LÓGICA DO SLIDER ---
     let slideIndex = 0;
     const slides = document.querySelectorAll('.slide');
     const dots = document.querySelectorAll('.dot');
@@ -372,14 +348,11 @@
     function showSlides() {
         slides.forEach(s => s.classList.remove('active'));
         dots.forEach(d => d.classList.remove('active'));
-        
         slideIndex++;
         if (slideIndex > slides.length) { slideIndex = 1; }
-        
         slides[slideIndex - 1].classList.add('active');
         dots[slideIndex - 1].classList.add('active');
-        
-        setTimeout(showSlides, 6000); // 6 segundos por banner
+        setTimeout(showSlides, 6000);
     }
 
     function currentSlide(n) {
@@ -390,9 +363,8 @@
         dots[n].classList.add('active');
     }
 
-    showSlides(); // Inicia o rodízio
+    showSlides();
 
-    // --- INTERFACE ---
     const topBtn = document.getElementById("topBtn");
     const nav = document.getElementById("mainNav");
     const menuToggle = document.getElementById("menu-toggle");
@@ -403,16 +375,8 @@
     };
 
     function voltarAoTopo() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
-
-    function toggleMenu() {
-        nav.classList.toggle("active");
-        menuToggle.innerText = nav.classList.contains("active") ? "✕" : "☰";
-    }
-
-    function fecharMenu() {
-        nav.classList.remove("active");
-        menuToggle.innerText = "☰";
-    }
+    function toggleMenu() { nav.classList.toggle("active"); menuToggle.innerText = nav.classList.contains("active") ? "✕" : "☰"; }
+    function fecharMenu() { nav.classList.remove("active"); menuToggle.innerText = "☰"; }
 </script>
 
 </body>
