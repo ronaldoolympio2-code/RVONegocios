@@ -37,11 +37,7 @@ body{
 
     min-height:100vh;
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    padding:50px 20px;
+    padding:60px 20px;
 
     font-family:'Inter',sans-serif;
 
@@ -58,6 +54,8 @@ body{
 
     overflow-x:hidden;
     overflow-y:auto;
+
+    display:block;
 }
 
 /* EFEITO DE LUZ */
@@ -82,6 +80,8 @@ body::before{
     lightMove 25s linear infinite;
 
     z-index:0;
+
+    pointer-events:none;
 }
 
 /* CONTAINER */
@@ -91,6 +91,8 @@ body::before{
 
     width:100%;
     max-width:640px;
+
+    margin:0 auto;
 
     text-align:center;
 
