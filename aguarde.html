@@ -8,7 +8,8 @@
 
 <title>RVO Negócios | Aguarde</title>
 
-<meta name="description" content="RVO Negócios — Inteligência de Negócios & Ativos. Estamos estruturando uma nova experiência digital.">
+<meta name="description"
+content="RVO Negócios — Inteligência de Negócios & Ativos. Estamos estruturando uma nova experiência digital.">
 
 <meta name="theme-color" content="#0b1120">
 
@@ -33,7 +34,6 @@ html{
 /* BODY */
 body{
     position:relative;
-    overflow:hidden;
 
     min-height:100vh;
 
@@ -48,19 +48,23 @@ body{
     color:#e5e7eb;
 
     background:
-    radial-gradient(circle at 20% 10%,
+    radial-gradient(
+    circle at 20% 10%,
     #1f2a44 0%,
     #0b1120 70%);
 
     -webkit-font-smoothing:antialiased;
     -moz-osx-font-smoothing:grayscale;
+
+    overflow-x:hidden;
+    overflow-y:auto;
 }
 
 /* EFEITO DE LUZ */
 body::before{
     content:"";
 
-    position:absolute;
+    position:fixed;
 
     width:160%;
     height:160%;
@@ -69,11 +73,13 @@ body::before{
     left:-30%;
 
     background:
-    radial-gradient(circle,
+    radial-gradient(
+    circle,
     rgba(201,169,97,0.07),
     transparent 60%);
 
-    animation:lightMove 25s linear infinite;
+    animation:
+    lightMove 25s linear infinite;
 
     z-index:0;
 }
@@ -87,11 +93,13 @@ body::before{
     max-width:640px;
 
     text-align:center;
+
+    padding-bottom:40px;
 }
 
 /* LOGO */
 .logo{
-    width:300px;
+    width:380px;
     max-width:88%;
 
     margin-bottom:30px;
@@ -99,7 +107,8 @@ body::before{
     opacity:0;
     transform:translateY(-15px);
 
-    animation:fadeDown 1.2s ease forwards;
+    animation:
+    fadeDown 1.2s ease forwards;
 }
 
 /* TÍTULO */
@@ -123,7 +132,8 @@ h1{
 }
 
 h1 span{
-    animation:subtlePulse 3s ease-in-out infinite;
+    animation:
+    subtlePulse 3s ease-in-out infinite;
 }
 
 /* DIVISOR */
@@ -347,7 +357,6 @@ h1,
 
     body{
         padding:40px 20px;
-        overflow:auto;
     }
 
     .logo{
