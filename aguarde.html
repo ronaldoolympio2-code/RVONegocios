@@ -3,207 +3,340 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RVO Negócios</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<title>RVO Negócios | Em evolução</title>
+
+<meta name="description" content="RVO Negócios — Inteligência de Negócios & Ativos. Estamos estruturando uma nova experiência digital.">
+<meta name="theme-color" content="#0b1120">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-    background: radial-gradient(circle at 20% 10%, #1f2a44, #0b1120 70%);
-    color: #e5e7eb;
-    font-family: 'Inter', sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    padding: 50px 20px;
-
-    /* MICROTIPOGRAFIA */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+html{
+    scroll-behavior:smooth;
 }
 
-/* FUNDO SUTIL */
-body::before {
-    content: "";
-    position: absolute;
-    width: 160%;
-    height: 160%;
-    background: radial-gradient(circle, rgba(201,169,97,0.06), transparent 60%);
-    animation: lightMove 25s linear infinite;
+body{
+    position:relative;
+    overflow:hidden;
+
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:50px 20px;
+
+    font-family:'Inter',sans-serif;
+    color:#e5e7eb;
+
+    background:
+    radial-gradient(circle at 20% 10%, #1f2a44 0%, #0b1120 70%);
+
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+}
+
+/* EFEITO DE LUZ */
+body::before{
+    content:"";
+    position:absolute;
+
+    width:160%;
+    height:160%;
+
+    top:-30%;
+    left:-30%;
+
+    background:
+    radial-gradient(circle,
+    rgba(201,169,97,0.07),
+    transparent 60%);
+
+    animation:lightMove 25s linear infinite;
+
+    z-index:0;
 }
 
 /* CONTAINER */
-.container {
-    max-width: 640px;
-    width: 100%;
-    text-align: center;
-    position: relative;
-    z-index: 2;
+.container{
+    position:relative;
+    z-index:2;
+
+    width:100%;
+    max-width:640px;
+
+    text-align:center;
 }
 
 /* LOGO */
-.logo {
-    width: 380px;
-    max-width: 88%;
-    margin-bottom: 30px;
+.logo{
+    width:380px;
+    max-width:88%;
 
-    opacity: 0;
-    transform: translateY(-15px);
-    animation: fadeDown 1.2s ease forwards;
+    margin-bottom:30px;
+
+    opacity:0;
+    transform:translateY(-15px);
+
+    animation:fadeDown 1.2s ease forwards;
 }
 
 /* TÍTULO */
-h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 40px;
-    margin-bottom: 10px;
-    letter-spacing: 0.6px;
-    line-height: 1.2;
+h1{
+    font-family:'Playfair Display',serif;
 
-    opacity: 0;
-    animation: fadeUp 1.2s ease forwards;
-    animation-delay: 0.2s;
+    font-size:40px;
+    font-weight:700;
+
+    line-height:1.2;
+    letter-spacing:0.6px;
+
+    margin-bottom:10px;
+
+    opacity:0;
+
+    animation:fadeUp 1.2s ease forwards;
+    animation-delay:0.2s;
 }
 
-h1 span {
-    animation: subtlePulse 3s ease-in-out infinite;
-}
-
-/* SUBTÍTULO */
-.subtitle {
-    font-size: 16.5px;
-    color: #9ca3af;
-    margin-bottom: 20px;
-    letter-spacing: 0.3px;
-
-    opacity: 0;
-    animation: fadeUp 1.2s ease forwards;
-    animation-delay: 0.4s;
+h1 span{
+    animation:subtlePulse 3s ease-in-out infinite;
 }
 
 /* DIVISOR */
-.divider {
-    width: 60px;
-    height: 2px;
-    margin: 18px auto;
-    background: linear-gradient(to right, transparent, #c9a961, transparent);
+.divider{
+    width:60px;
+    height:2px;
 
-    opacity: 0;
-    animation: fadeUp 1s ease forwards;
-    animation-delay: 0.6s;
+    margin:18px auto;
+
+    background:
+    linear-gradient(
+    to right,
+    transparent,
+    #c9a961,
+    transparent);
+
+    opacity:0;
+
+    animation:fadeUp 1s ease forwards;
+    animation-delay:0.6s;
+}
+
+/* SUBTÍTULO */
+.subtitle{
+    font-size:16px;
+    color:#9ca3af;
+
+    margin-bottom:20px;
+
+    letter-spacing:0.3px;
+
+    opacity:0;
+
+    animation:fadeUp 1.2s ease forwards;
+    animation-delay:0.4s;
 }
 
 /* TEXTO */
-.text {
-    font-size: 16px;
-    line-height: 1.75;
-    color: #d1d5db;
-    margin: 0 auto 28px auto;
-    max-width: 520px;
-    letter-spacing: 0.2px;
+.text{
+    max-width:520px;
 
-    opacity: 0;
-    animation: fadeUp 1.2s ease forwards;
-    animation-delay: 0.8s;
+    margin:0 auto 30px auto;
+
+    color:#d1d5db;
+
+    font-size:16px;
+    line-height:1.8;
+    letter-spacing:0.2px;
+
+    opacity:0;
+
+    animation:fadeUp 1.2s ease forwards;
+    animation-delay:0.8s;
 }
 
 /* BOTÕES */
-.btn-group {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin-bottom: 5px;
+.btn-group{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
 
-    opacity: 0;
-    animation: fadeUp 1.2s ease forwards;
-    animation-delay: 1s;
+    margin-bottom:8px;
+
+    opacity:0;
+
+    animation:fadeUp 1.2s ease forwards;
+    animation-delay:1s;
 }
 
-.btn {
-    padding: 11px 24px;
-    font-size: 13.5px;
-    border-radius: 3px;
-    text-decoration: none;
-    font-weight: 500;
-    letter-spacing: 0.4px;
-    transition: all 0.25s ease;
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    min-width:200px;
+
+    padding:12px 24px;
+
+    border-radius:4px;
+
+    text-decoration:none;
+
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:0.4px;
+
+    transition:all .25s ease;
 }
 
-.btn-primary {
-    background: #c9a961;
-    color: #0b1120;
+/* BOTÃO PRINCIPAL */
+.btn-primary{
+    background:#c9a961;
+    color:#0b1120;
 }
 
-.btn-primary:hover {
-    transform: translateY(-1px);
+.btn-primary:hover{
+    transform:translateY(-2px);
+    filter:brightness(1.05);
 }
 
-.btn-outline {
-    border: 1px solid #c9a961;
-    color: #c9a961;
+/* BOTÃO OUTLINE */
+.btn-outline{
+    border:1px solid #c9a961;
+    color:#c9a961;
 }
 
-.btn-outline:hover {
-    background: #c9a961;
-    color: #0b1120;
+.btn-outline:hover{
+    background:#c9a961;
+    color:#0b1120;
 }
 
-/* ASSINATURA */
-.footer {
-    margin-top: 20px;
-    font-size: 12.5px;
-    color: #c9a961;
-    letter-spacing: 0.6px;
-    line-height: 1.6;
+/* FOOTER */
+.footer{
+    margin-top:24px;
 
-    opacity: 0;
-    animation: fadeUp 1.2s ease forwards;
-    animation-delay: 1.2s;
+    font-size:12px;
+    line-height:1.7;
+    letter-spacing:0.5px;
+
+    color:#c9a961;
+
+    opacity:0;
+
+    animation:fadeUp 1.2s ease forwards;
+    animation-delay:1.2s;
 }
 
-.footer::before {
-    content: "";
-    display: block;
-    width: 110px;
-    height: 1px;
-    margin: 0 auto 10px auto;
-    background: linear-gradient(to right, transparent, #c9a961, transparent);
+.footer::before{
+    content:"";
+
+    display:block;
+
+    width:110px;
+    height:1px;
+
+    margin:0 auto 12px auto;
+
+    background:
+    linear-gradient(
+    to right,
+    transparent,
+    #c9a961,
+    transparent);
 }
 
 /* ANIMAÇÕES */
-@keyframes fadeUp {
-    from {opacity: 0; transform: translateY(20px);}
-    to {opacity: 1; transform: translateY(0);}
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
-@keyframes fadeDown {
-    from {opacity: 0; transform: translateY(-20px);}
-    to {opacity: 1; transform: translateY(0);}
+@keyframes fadeDown{
+    from{
+        opacity:0;
+        transform:translateY(-20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
-@keyframes lightMove {
-    from {transform: translate(-10%, -10%);}
-    to {transform: translate(10%, 10%);}
+@keyframes lightMove{
+    from{
+        transform:translate(-10%, -10%);
+    }
+
+    to{
+        transform:translate(10%, 10%);
+    }
 }
 
-@keyframes subtlePulse {
-    0%,100% {opacity: 1;}
-    50% {opacity: 0.9;}
+@keyframes subtlePulse{
+    0%,100%{
+        opacity:1;
+    }
+
+    50%{
+        opacity:0.88;
+    }
 }
 
-/* MOBILE */
-@media (max-width: 600px) {
-    .logo { width: 240px; }
-    h1 { font-size: 30px; }
+/* RESPONSIVO */
+@media(max-width:600px){
+
+    body{
+        padding:40px 20px;
+        overflow:auto;
+    }
+
+    .logo{
+        width:240px;
+    }
+
+    h1{
+        font-size:30px;
+    }
+
+    .text{
+        font-size:15px;
+        line-height:1.7;
+    }
+
+    .btn{
+        width:100%;
+        max-width:320px;
+    }
+
+    .btn-group{
+        flex-direction:column;
+        align-items:center;
+    }
+
 }
+
 </style>
 </head>
 
@@ -211,36 +344,53 @@ h1 span {
 
 <div class="container">
 
-    <img src="rvo-logo.jpg" alt="RVO Negócios" class="logo">
+    <img src="rvo-logo.jpg"
+         alt="RVO Negócios"
+         class="logo">
 
-    <h1><span>Aguarde</span></h1>
+    <h1>
+        <span>Aguarde</span>
+    </h1>
 
     <div class="divider"></div>
 
-    <p class="subtitle">Estamos em evolução</p>
+    <p class="subtitle">
+        Estamos em evolução
+    </p>
 
     <p class="text">
-        Estamos estruturando uma nova presença digital, alinhada à seriedade,
-        estratégia e excelência que definem a RVO Negócios.<br><br>
+        Estamos estruturando uma nova presença digital,
+        alinhada à seriedade, estratégia e excelência
+        que definem a RVO Negócios.
+        <br><br>
         Em breve, uma experiência à altura das suas decisões.
     </p>
 
     <div class="btn-group">
-        <a href="https://wa.me/5511963537305" target="_blank" class="btn btn-primary">
-            Contato via WhatsApp
+
+        <a href="https://wa.me/5511963537305"
+           target="_blank"
+           class="btn btn-primary">
+
+           Contato via WhatsApp
         </a>
 
-        <a href="mailto:contato@rvonegocios.com.br" class="btn btn-outline">
-            Enviar e-mail
+        <a href="mailto:contato@rvonegocios.com.br"
+           class="btn btn-outline">
+
+           Enviar e-mail
         </a>
+
     </div>
 
     <div class="footer">
-    <footer>
-    &copy; 2011-2026 RVO Negócios | Excelência em Inteligência de Negócios & Ativos<br>
-    Todos os direitos reservados.<br>
-    SÃO PAULO | RIO DE JANEIRO | BRASIL
-    </footer>
+
+        &copy; 2011-2026 RVO Negócios | Excelência em Inteligência de Negócios & Ativos<br>
+
+        Todos os direitos reservados.<br>
+
+        SÃO PAULO | RIO DE JANEIRO | BRASIL
+
     </div>
 
 </div>
