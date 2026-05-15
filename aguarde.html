@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>RVO Negócios | Aguarde</title>
 
 <meta name="description" content="RVO Negócios — Inteligência de Negócios & Ativos. Estamos estruturando uma nova experiência digital.">
+
 <meta name="theme-color" content="#0b1120">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,6 +19,7 @@
 
 <style>
 
+/* RESET */
 *{
     margin:0;
     padding:0;
@@ -26,6 +30,7 @@ html{
     scroll-behavior:smooth;
 }
 
+/* BODY */
 body{
     position:relative;
     overflow:hidden;
@@ -39,10 +44,13 @@ body{
     padding:50px 20px;
 
     font-family:'Inter',sans-serif;
+
     color:#e5e7eb;
 
     background:
-    radial-gradient(circle at 20% 10%, #1f2a44 0%, #0b1120 70%);
+    radial-gradient(circle at 20% 10%,
+    #1f2a44 0%,
+    #0b1120 70%);
 
     -webkit-font-smoothing:antialiased;
     -moz-osx-font-smoothing:grayscale;
@@ -51,6 +59,7 @@ body{
 /* EFEITO DE LUZ */
 body::before{
     content:"";
+
     position:absolute;
 
     width:160%;
@@ -107,7 +116,9 @@ h1{
 
     opacity:0;
 
-    animation:fadeUp 1.2s ease forwards;
+    animation:
+    fadeUp 1.2s ease forwards;
+
     animation-delay:0.2s;
 }
 
@@ -131,13 +142,16 @@ h1 span{
 
     opacity:0;
 
-    animation:fadeUp 1s ease forwards;
+    animation:
+    fadeUp 1s ease forwards;
+
     animation-delay:0.6s;
 }
 
 /* SUBTÍTULO */
 .subtitle{
     font-size:16px;
+
     color:#9ca3af;
 
     margin-bottom:20px;
@@ -146,7 +160,9 @@ h1 span{
 
     opacity:0;
 
-    animation:fadeUp 1.2s ease forwards;
+    animation:
+    fadeUp 1.2s ease forwards;
+
     animation-delay:0.4s;
 }
 
@@ -164,7 +180,9 @@ h1 span{
 
     opacity:0;
 
-    animation:fadeUp 1.2s ease forwards;
+    animation:
+    fadeUp 1.2s ease forwards;
+
     animation-delay:0.8s;
 }
 
@@ -179,7 +197,9 @@ h1 span{
 
     opacity:0;
 
-    animation:fadeUp 1.2s ease forwards;
+    animation:
+    fadeUp 1.2s ease forwards;
+
     animation-delay:1s;
 }
 
@@ -198,6 +218,7 @@ h1 span{
 
     font-size:13px;
     font-weight:600;
+
     letter-spacing:0.4px;
 
     transition:all .25s ease;
@@ -237,7 +258,9 @@ h1 span{
 
     opacity:0;
 
-    animation:fadeUp 1.2s ease forwards;
+    animation:
+    fadeUp 1.2s ease forwards;
+
     animation-delay:1.2s;
 }
 
@@ -259,8 +282,20 @@ h1 span{
     transparent);
 }
 
+/* GARANTIA DE EXIBIÇÃO */
+.logo,
+h1,
+.subtitle,
+.divider,
+.text,
+.btn-group,
+.footer{
+    animation-fill-mode:forwards;
+}
+
 /* ANIMAÇÕES */
 @keyframes fadeUp{
+
     from{
         opacity:0;
         transform:translateY(20px);
@@ -273,6 +308,7 @@ h1 span{
 }
 
 @keyframes fadeDown{
+
     from{
         opacity:0;
         transform:translateY(-20px);
@@ -285,6 +321,7 @@ h1 span{
 }
 
 @keyframes lightMove{
+
     from{
         transform:translate(-10%, -10%);
     }
@@ -295,6 +332,7 @@ h1 span{
 }
 
 @keyframes subtlePulse{
+
     0%,100%{
         opacity:1;
     }
@@ -338,56 +376,81 @@ h1 span{
 }
 
 </style>
+
 </head>
 
 <body>
 
 <div class="container">
 
-    <img src="rvo-logo.jpg"
-         alt="RVO Negócios"
-         class="logo">
+    <!-- LOGO -->
+    <img
+        src="rvo-logo.jpg"
+        alt="RVO Negócios"
+        class="logo"
+    >
 
+    <!-- TÍTULO -->
     <h1>
         <span>Aguarde</span>
     </h1>
 
+    <!-- DIVISOR -->
     <div class="divider"></div>
 
+    <!-- SUBTÍTULO -->
     <p class="subtitle">
         Estamos em evolução
     </p>
 
+    <!-- TEXTO -->
     <p class="text">
+
         Estamos estruturando uma nova presença digital,
         alinhada à seriedade, estratégia e excelência
         que definem a RVO Negócios.
+
         <br><br>
+
         Em breve, uma experiência à altura das suas decisões.
+
     </p>
 
+    <!-- BOTÕES -->
     <div class="btn-group">
 
-        <a href="https://wa.me/5511963537305"
-           target="_blank"
-           class="btn btn-primary">
+        <a
+            href="https://wa.me/5511963537305"
+            target="_blank"
+            class="btn btn-primary"
+        >
 
-           Contato via WhatsApp
+            Contato via WhatsApp
+
         </a>
 
-        <a href="mailto:contato@rvonegocios.com.br"
-           class="btn btn-outline">
+        <a
+            href="mailto:contato@rvonegocios.com.br"
+            class="btn btn-outline"
+        >
 
-           Enviar e-mail
+            Enviar e-mail
+
         </a>
 
     </div>
 
+    <!-- FOOTER -->
     <div class="footer">
 
-        &copy; 2011-2026 RVO Negócios | Excelência em Inteligência de Negócios & Ativos<br>
+        &copy; 2011-2026 RVO Negócios |
+        Excelência em Inteligência de Negócios & Ativos
 
-        Todos os direitos reservados.<br>
+        <br>
+
+        Todos os direitos reservados.
+
+        <br>
 
         SÃO PAULO | RIO DE JANEIRO | BRASIL
 
