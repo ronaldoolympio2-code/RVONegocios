@@ -35,6 +35,8 @@ html{
 body{
     position:relative;
 
+    width:100%;
+
     min-height:100vh;
 
     padding:60px 20px;
@@ -55,7 +57,8 @@ body{
     overflow-x:hidden;
     overflow-y:auto;
 
-    display:block;
+    display:flex;
+    justify-content:flex-start;
 }
 
 /* EFEITO DE LUZ */
@@ -92,11 +95,11 @@ body::before{
     width:100%;
     max-width:640px;
 
-    margin:0 auto;
+    margin:auto;
 
     text-align:center;
 
-    padding-bottom:40px;
+    padding-bottom:60px;
 }
 
 /* LOGO */
@@ -358,7 +361,7 @@ h1,
 @media(max-width:600px){
 
     body{
-        padding:40px 20px;
+        padding:35px 18px;
     }
 
     .logo{
