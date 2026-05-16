@@ -70,10 +70,11 @@
             opacity: 0; transition: opacity 1.5s ease-in-out;
             display: flex; align-items: center; justify-content: center;
             text-align: center; padding: 0 10%;
+            z-index: 1;
         }
-        .slide.active { opacity: 1; }
+        .slide.active { opacity: 1; z-index: 2; }
 
-        /* Fundos dos Banners (Substituir pelos seus arquivos) */
+        /* Fundos dos Banners */
         .slide:nth-child(1) { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('banner1.jpg') center/cover; }
         .slide:nth-child(2) { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('banner2.jpg') center/cover; }
         .slide:nth-child(3) { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('banner3.jpg') center/cover; }
@@ -112,7 +113,7 @@
         }
         .btn-premium:hover { background: var(--primary); color: var(--dark-bg); transform: translateY(-3px); }
 
-        /* --- WHATSAPP E TOPO (ALINHADOS) --- */
+        /* --- WHATSAPP E TOPO --- */
         .whatsapp-float {
             position: fixed; bottom: 25px; right: 25px;
             width: 65px; height: 65px; z-index: 1000; transition: transform 0.3s ease;
@@ -208,21 +209,21 @@
     <section class="slider-container" id="home">
         <div class="slide active">
             <div class="hero-content">
-                <h1>Compre, venda ou invista em precatórios com a&nbsp<span>RVO Negócios</span>!</h1>
+                <h3>Compre, venda ou invista em precatórios com a&nbsp;<span>RVO Negócios</span>!</h3>
                 <p>Liquidez e segurança jurídica para seus créditos judiciais.</p>
-                <a href="#contato" class="btn-premium">Fale com um especialista</a>
+                <a href="#contato" class="btn-premium">Fale com um specialist</a>
             </div>
         </div>
         <div class="slide">
             <div class="hero-content">
-                <h1>É legal comprar e vender&nbsp;<span>Precatórios</span>?</h1>
+                <h3>É legal comprar e vender&nbsp;<span>Precatórios</span>?</h3>
                 <p>Sim, é 100% legal comprar e vender precatórios no Brasil. Essa prática é amparada pela Constituição Federal (Artigo 100, parágrafos 13 e 14) e é juridicamente conhecida como Cessão de Crédito.</p>
                 <a href="#artigos" class="btn-premium">Fale com um especialista</a>
             </div>
         </div>
         <div class="slide">
             <div class="hero-content">
-                <h1>Faça a compensação de tributos com&nbsp<span>Precatórios</span>!</h1>
+                <h3>Faça a compensação de tributos com&nbsp;<span>Precatórios</span>!</h3>
                 <p>Os governos federal, estadual e municipal autorizam essa prática.</p>
                 <a href="https://wa.me/5511963537305" class="btn-premium">Fale com um especialista</a>
             </div>
@@ -273,12 +274,12 @@
                 <span class="article-tag">TJSP</span>
                 <h3 class="article-title">O que são precatórios?.</h3>
             </a>
-            <a href="https://www.gov.br/pt-br/servicos/utilizar-precatorios-federais-para-pagamento-divida-ativa-da-uniao" class="article-card">
+            <a href="https://www.gov.br/pt-br/servicos/utilizar-precatorios-federais-para-pagamento-divida-ativa-da-uniao" class="article-card" target="_blank" rel="noopener">
                 <div class="article-image"><img src="logogovbr.png" alt="Empresas"></div>
                 <span class="article-tag">GOVERNO FEDERAL</span>
                 <h3 class="article-title">Utilizar precatórios federais para pagamento de dívida ativa da União.</h3>
             </a>
-            <a href="https://conteudos.xpi.com.br/aprenda-a-investir/relatorios/precatorios/" class="article-card">
+            <a href="https://conteudos.xpi.com.br/aprenda-a-investir/relatorios/precatorios/" class="article-card" target="_blank" rel="noopener">
                 <div class="article-image"><img src="logoxp.png" alt="Segurança"></div>
                 <span class="article-tag">XP INVESTIMENTOS</span>
                 <h3 class="article-title">O que são precatórios e como investir?</h3>
@@ -312,7 +313,7 @@
         <div style="background: linear-gradient(135deg, #111a2e, #080d1a); padding: 80px 20px; text-align: center; border: 1px solid rgba(201, 169, 97, 0.2);">
             <h2 class="section-title" style="margin-bottom: 20px;">Expanda seus resultados.</h2>
             <p style="margin-bottom: 40px; color: var(--text-muted);">Agende uma reunião estratégica com nossos especialistas.</p>
-            <a href="https://wa.me/5511963537305" class="btn-premium">Falar com Diretoria</a>
+            <a href="https://wa.me/5511963537305" class="btn-premium" target="_blank" rel="noopener">Falar com Diretoria</a>
         </div>
     </section>
 </main>
@@ -342,27 +343,41 @@
 
 <script>
     let slideIndex = 0;
+    let slideTimeout;
     const slides = document.querySelectorAll('.slide');
     const dots = document.querySelectorAll('.dot');
 
     function showSlides() {
         slides.forEach(s => s.classList.remove('active'));
         dots.forEach(d => d.classList.remove('active'));
+        
         slideIndex++;
         if (slideIndex > slides.length) { slideIndex = 1; }
+        
         slides[slideIndex - 1].classList.add('active');
         dots[slideIndex - 1].classList.add('active');
-        setTimeout(showSlides, 6000);
+        
+        // Armazena o timer para poder resetá-lo se o usuário clicar manualmente
+        slideTimeout = setTimeout(showSlides, 6000);
     }
 
     function currentSlide(n) {
+        // Limpa o timer atual para evitar que mude rápido logo em seguida
+        clearTimeout(slideTimeout);
+        
         slideIndex = n;
         slides.forEach(s => s.classList.remove('active'));
         dots.forEach(d => d.classList.remove('active'));
-        slides[n].classList.add('active');
-        dots[n].classList.add('active');
+        
+        slides[slideIndex].classList.add('active');
+        dots[slideIndex].classList.add('active');
+        
+        // Reinicia a contagem automática a partir do slide clicado
+        slideIndex++; 
+        slideTimeout = setTimeout(showSlides, 6000);
     }
 
+    // Inicializa o slider
     showSlides();
 
     const topBtn = document.getElementById("topBtn");
