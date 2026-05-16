@@ -63,13 +63,23 @@
 
         #menu-toggle { display: none; font-size: 28px; color: #fff; cursor: pointer; background: none; border: none; }
 
-        /* --- SLIDER HERO --- */
-        .slider-container { position: relative; width: 100%; height: 100vh; overflow: hidden; background: #000; }
+        /* --- SLIDER HERO (CORRIGIDO) --- */
+        .slider-container { 
+            position: relative; 
+            width: 100%; 
+            min-height: 100vh; 
+            overflow: hidden; 
+            background: #000; 
+        }
         .slide {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
             opacity: 0; transition: opacity 1.5s ease-in-out;
-            display: flex; align-items: center; justify-content: center;
-            text-align: center; padding: 0 10%;
+            display: flex; 
+            flex-direction: column;
+            align-items: center; 
+            justify-content: center;
+            text-align: center; 
+            padding: 110px 10% 80px 10%; /* Compensação do cabeçalho e espaço para os dots */
             z-index: 1;
         }
         .slide.active { opacity: 1; z-index: 2; }
@@ -79,9 +89,12 @@
         .slide:nth-child(2) { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('banner2.jpg') center/cover; }
         .slide:nth-child(3) { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('banner3.jpg') center/cover; }
 
+        .hero-content {
+            margin-bottom: 20px;
+        }
         .hero-content h3 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(48px, 8vw, 90px);
+            font-size: clamp(40px, 6vw, 72px); /* Ajustado levemente para evitar quebras agressivas */
             line-height: 1.1;
             margin-bottom: 30px;
             color: #fff;
@@ -90,21 +103,14 @@
         }
         .hero-content h3 span { color: var(--primary); font-style: italic; }
         .hero-content p {
-            font-size: clamp(20px, 2.5vw, 28px);
+            font-size: clamp(18px, 2vw, 24px);
             color: var(--text-muted);
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             max-width: 850px;
             margin-left: auto; margin-right: auto;
         }
 
-        .slider-dots {
-            position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
-            display: flex; gap: 12px; z-index: 20;
-        }
-        .dot { width: 12px; height: 12px; border: 1px solid var(--primary); border-radius: 50%; cursor: pointer; transition: 0.3s; }
-        .dot.active { background: var(--primary); }
-
-        /* --- BOTÕES --- */
+        /* --- BOTÕES DO HERO --- */
         .btn-premium {
             border: 1px solid var(--primary); color: var(--primary);
             text-decoration: none; padding: 20px 50px; font-weight: 600;
@@ -112,6 +118,19 @@
             transition: 0.4s; display: inline-block;
         }
         .btn-premium:hover { background: var(--primary); color: var(--dark-bg); transform: translateY(-3px); }
+
+        /* --- CONTROLE DOS DOTS --- */
+        .slider-dots {
+            position: absolute; 
+            bottom: 30px; 
+            left: 50%; 
+            transform: translateX(-50%);
+            display: flex; 
+            gap: 12px; 
+            z-index: 20;
+        }
+        .dot { width: 12px; height: 12px; border: 1px solid var(--primary); border-radius: 50%; cursor: pointer; transition: 0.3s; }
+        .dot.active { background: var(--primary); }
 
         /* --- WHATSAPP E TOPO --- */
         .whatsapp-float {
@@ -205,7 +224,6 @@
 </header>
 
 <main>
-    <!-- SLIDER HERO -->
     <section class="slider-container" id="home">
         <div class="slide active">
             <div class="hero-content">
@@ -235,7 +253,6 @@
         </div>
     </section>
 
-    <!-- SOBRE -->
     <section id="sobre">
         <div style="max-width: 850px; margin: 0 auto; text-align: center;">
             <h2 class="section-title"><span>Desde 2011</span>Nossa Essência</h2>
@@ -243,7 +260,6 @@
         </div>
     </section>
 
-    <!-- SERVIÇOS -->
     <section id="servicos-detalhes" style="background: rgba(255,255,255,0.01);">
         <h2 class="section-title"><span>Expertise</span>Nossas Soluções</h2>
         <div class="services-container">
@@ -265,7 +281,6 @@
         </div>
     </section>
 
-    <!-- ARTIGOS PRECATÓRIOS -->
     <section id="artigos">
         <h2 class="section-title"><span>Insights</span>Especialistas em Precatórios</h2>
         <div class="articles-grid">
@@ -287,7 +302,6 @@
         </div>
     </section>
 
-    <!-- LOCALIZAÇÃO -->
     <section id="localizacao" style="background: rgba(255,255,255,0.01);">
         <h2 class="section-title"><span>Unidades</span>Presença Nacional</h2>
         <div class="grid-localizacao">
@@ -308,7 +322,6 @@
         </div>
     </section>
 
-    <!-- CONTATO -->
     <section id="contato">
         <div style="background: linear-gradient(135deg, #111a2e, #080d1a); padding: 80px 20px; text-align: center; border: 1px solid rgba(201, 169, 97, 0.2);">
             <h2 class="section-title" style="margin-bottom: 20px;">Expanda seus resultados.</h2>
@@ -337,7 +350,7 @@
         </div>
     </div>
     <div style="text-align: center; border-top: 1px solid rgba(255,255,255,0.03); padding-top: 30px; font-size: 10px; color: var(--text-muted);">
-        &copy; 2011-2026 RVO Negócios | Excelêmcia em Inteligência de Negócios & Ativos<br>
+        &copy; 2011-2026 RVO Negócios | Excelência em Inteligência de Negócios & Ativos<br>
         Todos os direitos reservados.
     </div>
 </footer>
@@ -358,12 +371,10 @@
         slides[slideIndex - 1].classList.add('active');
         dots[slideIndex - 1].classList.add('active');
         
-        // Armazena o timer para poder resetá-lo se o usuário clicar manualmente
         slideTimeout = setTimeout(showSlides, 6000);
     }
 
     function currentSlide(n) {
-        // Limpa o timer atual para evitar que mude rápido logo em seguida
         clearTimeout(slideTimeout);
         
         slideIndex = n;
@@ -373,12 +384,10 @@
         slides[slideIndex].classList.add('active');
         dots[slideIndex].classList.add('active');
         
-        // Reinicia a contagem automática a partir do slide clicado
         slideIndex++; 
         slideTimeout = setTimeout(showSlides, 6000);
     }
 
-    // Inicializa o slider
     showSlides();
 
     const topBtn = document.getElementById("topBtn");
