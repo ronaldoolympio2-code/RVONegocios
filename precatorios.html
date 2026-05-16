@@ -63,7 +63,7 @@
 
         #menu-toggle { display: none; font-size: 28px; color: #fff; cursor: pointer; background: none; border: none; }
 
-        /* --- SLIDER HERO (CORRIGIDO) --- */
+        /* --- SLIDER HERO --- */
         .slider-container { 
             position: relative; 
             width: 100%; 
@@ -79,7 +79,7 @@
             align-items: center; 
             justify-content: center;
             text-align: center; 
-            padding: 110px 10% 80px 10%; /* Compensação do cabeçalho e espaço para os dots */
+            padding: 110px 10% 80px 10%;
             z-index: 1;
         }
         .slide.active { opacity: 1; z-index: 2; }
@@ -94,7 +94,7 @@
         }
         .hero-content h3 {
             font-family: 'Playfair Display', serif;
-            font-size: clamp(40px, 6vw, 72px); /* Ajustado levemente para evitar quebras agressivas */
+            font-size: clamp(40px, 6vw, 72px);
             line-height: 1.1;
             margin-bottom: 30px;
             color: #fff;
@@ -341,6 +341,7 @@
             <h4 style="color: var(--primary); font-size: 11px; text-transform: uppercase; margin-bottom: 20px;">Navegação</h4>
             <p><a href="#sobre" style="color: var(--text-muted); text-decoration: none; font-size: 14px; display: block; margin-bottom: 10px;">Institucional</a></p>
             <p><a href="#servicos-detalhes" style="color: var(--text-muted); text-decoration: none; font-size: 14px; display: block; margin-bottom: 10px;">Serviços</a></p>
+            <p><a href="#artigos" style="color: var(--text-muted); text-decoration: none; font-size: 14px; display: block; margin-bottom: 10px;">Artigos</a></p>
             <p><a href="#localizacao" style="color: var(--text-muted); text-decoration: none; font-size: 14px; display: block;">Unidades</a></p>
         </div>
         <div>
@@ -371,7 +372,8 @@
         slides[slideIndex - 1].classList.add('active');
         dots[slideIndex - 1].classList.add('active');
         
-        slideTimeout = setTimeout(showSlides, 6000);
+        // Ajustado para 9000ms (9 segundos), aumentando metade do tempo original de 6s
+        slideTimeout = setTimeout(showSlides, 9000);
     }
 
     function currentSlide(n) {
@@ -385,7 +387,7 @@
         dots[slideIndex].classList.add('active');
         
         slideIndex++; 
-        slideTimeout = setTimeout(showSlides, 6000);
+        slideTimeout = setTimeout(showSlides, 9000);
     }
 
     showSlides();
