@@ -63,7 +63,7 @@
 
         #menu-toggle { display: none; font-size: 28px; color: #fff; cursor: pointer; background: none; border: none; }
 
-        /* --- SLIDER HERO ALTERADO PARA TOM DE AZUL --- */
+        /* --- SLIDER HERO --- */
         .slider-container { 
             position: relative; 
             width: 100%; 
@@ -154,7 +154,7 @@
         section { padding: 120px 10%; scroll-margin-top: 100px; }
         .section-title {
             font-family: 'Playfair Display', serif; font-size: clamp(32px, 5vw, 54px);
-            margin-bottom: 80px; text-align: center;
+            margin-bottom: 60px; text-align: center;
         }
         .section-title span {
             display: block; font-size: 12px; text-transform: uppercase; 
@@ -162,14 +162,150 @@
             font-family: 'Inter', sans-serif;
         }
 
-        /* --- GRID SERVIÇOS --- */
-        .services-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .service-box {
-            background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(201, 169, 97, 0.1);
-            padding: 50px 40px; transition: var(--transition-smooth); position: relative;
+        /* --- FILOSOFIA CORPORATIVA --- */
+        .filosofia-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+            text-align: left;
         }
-        .service-box:hover { background: rgba(201, 169, 97, 0.05); border-color: var(--primary); transform: translateY(-10px); }
-        .service-number { font-family: 'Playfair Display', serif; font-size: 40px; color: rgba(201, 169, 97, 0.15); position: absolute; top: 20px; right: 30px; }
+        .filosofia-card {
+            background: rgba(255, 255, 255, 0.01);
+            border-left: 2px solid var(--primary);
+            padding: 30px;
+            transition: var(--transition-smooth);
+        }
+        .filosofia-card:hover {
+            background: rgba(201, 169, 97, 0.03);
+            transform: translateY(-5px);
+        }
+        .filosofia-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        .filosofia-card p {
+            font-size: 15px;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+        .filosofia-card ul {
+            list-style: none;
+        }
+        .filosofia-card ul li {
+            font-size: 15px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+        .filosofia-card ul li strong {
+            color: var(--text-main);
+            display: block;
+            font-size: 16px;
+            margin-bottom: 2px;
+        }
+        .manifesto-block {
+            margin-top: 80px;
+            padding: 50px;
+            background: linear-gradient(135deg, rgba(17, 26, 46, 0.5), rgba(8, 13, 26, 0.5));
+            border: 1px solid rgba(201, 169, 97, 0.1);
+            text-align: center;
+        }
+        .manifesto-block h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            color: #fff;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+        .manifesto-block p {
+            max-width: 900px;
+            margin: 0 auto 30px;
+            font-size: 16px;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+        .manifesto-slogan {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: var(--primary);
+            font-style: italic;
+            font-weight: 600;
+        }
+
+        /* --- SEÇÃO SERVIÇOS REESTRUTURADA --- */
+        .services-grid-premium {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 40px;
+        }
+        .solutions-segment {
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid rgba(201, 169, 97, 0.08);
+            padding: 60px 45px;
+            position: relative;
+            transition: var(--transition-smooth);
+            text-align: left;
+        }
+        .solutions-segment:hover {
+            border-color: var(--primary);
+            background: rgba(201, 169, 97, 0.02);
+            transform: translateY(-5px);
+        }
+        .segment-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 44px;
+            color: rgba(201, 169, 97, 0.12);
+            position: absolute;
+            top: 25px;
+            right: 35px;
+        }
+        .solutions-segment h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: #fff;
+            margin-bottom: 25px;
+            border-bottom: 1px solid rgba(201, 169, 97, 0.2);
+            padding-bottom: 15px;
+            max-width: 85%;
+        }
+        .solutions-segment .segment-desc {
+            font-size: 16px;
+            color: var(--text-main);
+            font-weight: 300;
+            line-height: 1.7;
+            margin-bottom: 35px;
+        }
+        .features-list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        .feature-item h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .feature-item h4::before {
+            content: "✦";
+            font-size: 12px;
+            color: var(--primary);
+        }
+        .feature-item p {
+            font-size: 14.5px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            padding-left: 18px;
+        }
 
         /* --- GRID ARTIGOS --- */
         .articles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
@@ -181,13 +317,12 @@
         .article-title { font-family: 'Playfair Display', serif; font-size: 22px; line-height: 1.4; margin-bottom: 15px; transition: 0.3s; }
         .article-card:hover .article-title { color: var(--primary); }
 
-        /* --- LOCALIZAÇÃO COMPLETA COM CARDS --- */
+        /* --- LOCALIZAÇÃO --- */
         .grid-localizacao { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
         .img-wrapper { width: 100%; height: 450px; overflow: hidden; border-radius: 2px; }
         .img-predio { width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); transition: 1s; }
         .img-wrapper:hover .img-predio { filter: grayscale(0%); transform: scale(1.05); }
 
-        /* Mapas */
         .map-wrapper { width: 100%; height: 250px; margin-top: 20px; border-radius: 4px; overflow: hidden; }
         .map-wrapper iframe { 
             width: 100%; height: 100%; border: 0; 
@@ -207,16 +342,17 @@
         }
         .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 80px; margin-bottom: 60px; }
         .footer-grid h4 { font-size: 12px; letter-spacing: 2px; }
-        
-        /* Links e interações no rodapé */
         .footer-grid a { transition: color 0.3s ease; text-decoration: none; }
         .footer-grid a:hover { color: var(--primary-light) !important; }
 
         @media (max-width: 992px) {
-            .grid-localizacao, .footer-grid { grid-template-columns: 1fr; text-align: center; }
+            .grid-localizacao, .footer-grid, .services-grid-premium { grid-template-columns: 1fr; text-align: center; }
             nav { position: fixed; top: 0; right: -100%; width: 100%; height: 100vh; background: var(--dark-bg); flex-direction: column; justify-content: center; align-items: center; transition: 0.5s; }
             nav.active { right: 0; }
             #menu-toggle { display: block; z-index: 1001; }
+            .manifesto-block { padding: 30px 15px; }
+            .solutions-segment { padding: 40px 25px; }
+            .solutions-segment h3 { max-width: 100%; }
         }
     </style>
 </head>
@@ -274,29 +410,89 @@
     </section>
 
     <section id="sobre">
-        <div style="max-width: 850px; margin: 0 auto; text-align: center;">
+        <div style="max-width: 1100px; margin: 0 auto; text-align: center;">
             <h2 class="section-title"><span>Desde 2011</span>Nossa Essência</h2>
-            <p style="font-size: 22px; color: var(--text-muted); margin-bottom: 40px; font-weight: 300;">Fundada sobre os pilares da ética e do profissionalismo, a RVO Negócios é referência na intermediação de compra e venda de precatórios.</p>
+            <p style="font-size: 22px; color: var(--text-main); margin-bottom: 50px; font-weight: 300; max-width: 850px; margin-left: auto; margin-right: auto;">
+                Fundada sobre os pilares da ética e do profissionalismo, a RVO Negócios é referência na intermediação de compra e venda de precatórios.
+            </p>
+            
+            <h2 class="section-title" style="margin-top: 40px; margin-bottom: 40px;"><span>Diretrizes</span>Nossa Filosofia Corporativa</h2>
+            
+            <div class="filosofia-grid">
+                <div class="filosofia-card">
+                    <h3>Missão</h3>
+                    <p>Desmistificar o mercado de ativos judiciais, proporcionando liquidez imediata e justiça financeira para pessoas físicas e empresas por meio de transações éticas, ágeis e juridicamente blindadas.</p>
+                </div>
+                <div class="filosofia-card">
+                    <h3>Visão</h3>
+                    <p>Ser a referência nacional absoluta em inteligência de ativos e a marca mais confiável para pessoas físicas e jurídicas no mercado de precatórios, destacando-se pela excelência no atendimento, solidez financeira e transparência inegociável.</p>
+                </div>
+                <div class="filosofia-card">
+                    <h3>Valores</h3>
+                    <ul>
+                        <li><strong>Segurança Institucional e Humana:</strong> Respeito absoluto ao direito do cliente e aos critérios de compliance.</li>
+                        <li><strong>Transparência Radical:</strong> Relações comerciais baseadas na clareza total, sem letras miúdas.</li>
+                        <li><strong>Eficiência e Solidez:</strong> Agilidade para pagar à vista e robustez para garantir grandes operações.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="manifesto-block">
+                <h4>RVO Negócios</h4>
+                <p>Seja para empresas que buscam inteligência estratégica, seja para a pessoa física que deseja receber o que é seu por direito sem ter que esperar pelos prazos do Estado, a RVO Negócios entrega a solução. Nós transformamos a complexidade jurídica em tranquilidade e patrimônio líquido.</p>
+                <p style="font-size: 15px; color: var(--primary); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px;">A inteligência de ativos que muda o tempo do seu sucesso.</p>
+                <div class="manifesto-slogan">Conectando oportunidades. Gerando resultados.</div>
+            </div>
         </div>
     </section>
 
+    <!-- --- SEÇÃO SERVIÇOS INTEIRAMENTE ATUALIZADA --- -->
     <section id="servicos-detalhes" style="background: rgba(255,255,255,0.01);">
-        <h2 class="section-title"><span>Expertise</span>Nossas Soluções</h2>
-        <div class="services-container">
-            <div class="service-box">
-                <span class="service-number">01</span>
-                <h3>Antecipação</h3>
-                <p>Soluções imediatas de liquidez para portadores de precatórios federais, estaduais e municipais.</p>
-            </div>
-            <div class="service-box">
-                <span class="service-number">02</span>
-                <h3>Tributário</h3>
-                <p>Compensação de tributos com precatórios.</p>
-            </div>
-            <div class="service-box">
-                <span class="service-number">03</span>
-                <h3>Investimentos</h3>
-                <p>Invista em precatórios.</p>
+        <div style="max-width: 1200px; margin: 0 auto; text-align: center;">
+            <h2 class="section-title"><span>Expertise de Mercado</span>Nossas Soluções Estratégicas</h2>
+            
+            <div class="services-grid-premium">
+                <!-- Bloco 01 - Pessoas Físicas -->
+                <div class="solutions-segment">
+                    <span class="segment-number">01</span>
+                    <h3>Soluções para Pessoas Físicas:<br><span style="color: var(--primary); font-family: inherit; font-size: inherit;">A Conquista da Liquidez Imediata</span></h3>
+                    <p class="segment-desc">
+                        Para o cidadão detentor de um precatório, a RVO Negócios representa o fim da espera. Transformamos um processo judicial demorado em dinheiro na conta, permitindo que você realize projetos, liquide dívidas ou invista no seu futuro hoje.
+                    </p>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <h4>Negociação Humanizada e Transparente</h4>
+                            <p>Explicamos cada etapa do processo de forma simples, justa e com clareza absoluta.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>Avaliação Justa</h4>
+                            <p>Apresentamos propostas de compra altamente competitivas, baseadas em análises técnicas precisas.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>Segurança Jurídica Absoluta</h4>
+                            <p>Todo o processo de cessão de crédito é realizado sob rigorosos critérios legais, oficializado em cartório, garantindo total proteção ao vendedor.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bloco 02 - Corporações e Investidores -->
+                <div class="solutions-segment">
+                    <span class="segment-number">02</span>
+                    <h3>Soluções Estratégicas para<br><span style="color: var(--primary); font-family: inherit; font-size: inherit;">Corporações e Investidores</span></h3>
+                    <p class="segment-desc">
+                        Para o mercado institucional, estruturamos carteiras de ativos judiciais de alta rentabilidade e oferecemos soluções customizadas de precatórios adequadas para o planejamento fiscal e a compensação de débitos tributários de grandes organizações.
+                    </p>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <h4>Due Diligence Rigorosa</h4>
+                            <p>Auditoria jurídica completa e profunda para mitigação absoluta de riscos e blindagem da operação.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>Engenharia Financeira</h4>
+                            <p>Alocação inteligente e estratégica de ativos judiciais focada na otimização de balanços corporativos.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
