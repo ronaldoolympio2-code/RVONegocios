@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -17,6 +16,7 @@
             --text-main: #ffffff;
         }
 
+        /* CORRIGIDO: Seletor universal ajustado */
         * {
             margin: 0;
             padding: 0;
@@ -38,7 +38,6 @@
             min-height: 100vh;
         }
 
-
         /* =====================================================
            ABERTURA — VÍDEO RVO NEGÓCIOS
            ===================================================== */
@@ -56,9 +55,7 @@
             overflow: hidden;
             opacity: 1;
             visibility: visible;
-            transition:
-                opacity 1.2s ease,
-                visibility 1.2s ease;
+            transition: opacity 1.2s ease, visibility 1.2s ease;
         }
 
         #videoIntro.video-hidden {
@@ -80,26 +77,18 @@
             bottom: 40px;
             left: 50%;
             transform: translateX(-50%);
-
             padding: 14px 28px;
-
             background: rgba(11, 17, 32, 0.65);
             border: 1px solid rgba(201, 169, 97, 0.85);
-
             color: #c9a961;
-
             font-family: 'Inter', sans-serif;
             font-size: 11px;
             font-weight: 600;
-
             letter-spacing: 3px;
             text-transform: uppercase;
-
             cursor: pointer;
-
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
-
             transition: all 0.35s ease;
         }
 
@@ -110,9 +99,7 @@
             transform: translateX(-50%) translateY(-3px);
         }
 
-
         /* FUNDO COM GRADIENTE SUTIL */
-
         .bg-gradient {
             position: fixed;
             top: 0;
@@ -127,9 +114,7 @@
             z-index: -1;
         }
 
-
-        /* HEADER CENTRALIZADO (IMPACTO) */
-
+        /* HEADER CENTRALIZADO */
         header {
             padding: 60px 5% 40px;
             text-align: center;
@@ -157,9 +142,7 @@
             font-style: italic;
         }
 
-
         /* GRID HARMONIZADO */
-
         .portal-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -169,9 +152,7 @@
             padding-bottom: 80px;
         }
 
-
         /* ESTILO DOS CARDS */
-
         .nav-card {
             background: var(--card-bg);
             border: 1px solid rgba(201, 169, 97, 0.3);
@@ -193,9 +174,7 @@
             box-shadow: 0 15px 35px rgba(0,0,0,0.4);
         }
 
-
         /* CONTEÚDO DO CARD */
-
         .nav-card h2 {
             font-family: 'Playfair Display', serif;
             font-size: 32px;
@@ -211,9 +190,7 @@
             font-weight: 300;
         }
 
-
         /* BOTÕES DENTRO DOS CARDS */
-
         .btn-card {
             font-size: 12px;
             text-transform: uppercase;
@@ -231,18 +208,14 @@
             color: #000;
         }
 
-
         /* CARD AGUARDE */
-
         .card-waiting .btn-card {
             background: var(--primary);
             color: #000;
             cursor: default;
         }
 
-
         /* BOTÕES FLUTUANTES */
-
         .whatsapp-float {
             position: fixed;
             bottom: 30px;
@@ -260,7 +233,6 @@
         .whatsapp-float:hover img {
             transform: scale(1.1);
         }
-
 
         #topBtn {
             position: fixed;
@@ -286,11 +258,8 @@
             visibility: visible;
         }
 
-
         /* RESPONSIVIDADE */
-
         @media (max-width: 1024px) {
-
             .portal-grid {
                 grid-template-columns: 1fr;
                 width: 95%;
@@ -305,9 +274,7 @@
             }
         }
 
-
         /* RODAPÉ */
-
         footer {
             padding: 40px;
             color: var(--primary);
@@ -323,163 +290,74 @@
 
 <body>
 
-
 <!-- ==========================================================
      ABERTURA DO SITE — VÍDEO
      ========================================================== -->
 
 <div id="videoIntro">
-
     <video
         id="introVideo"
         autoplay
         muted
         playsinline
         preload="auto">
-
-        <source
-            src="RVO_LOGO_ANIMADA_HORIZONTAL.mp4"
-            type="video/mp4">
-
+        <!-- Espaços codificados para %20 -->
+        <source src="RVO_LOGO_ANIMADA_HORIZONTAL_SILENCIADA.mp4" type="video/mp4">
         Seu navegador não suporta vídeos HTML5.
     </video>
 
-    <button id="enterSite">
-        Entrar no site
-    </button>
-
+    <button id="enterSite">Entrar no site</button>
 </div>
-
 
 <div class="bg-gradient"></div>
 
-
 <button id="topBtn" onclick="voltarAoTopo()">▲</button>
 
-
-<a
-    href="https://wa.me/5511963537305"
-    target="_blank"
-    class="whatsapp-float">
-
-    <img
-        src="whatsappbusiness.png"
-        alt="WhatsApp Business">
-
+<a href="https://wa.me/5511963537305" target="_blank" class="whatsapp-float">
+    <img src="whatsappbusiness.png" alt="WhatsApp Business">
 </a>
 
-
 <header>
-
-    <img
-        src="rvo-logo.jpg"
-        alt="RVO Negócios"
-        class="logo-main">
-
+    <img src="rvo-logo.jpg" alt="RVO Negócios" class="logo-main">
     <h1>
         Excelência em Inteligência de<br>
         <span>Negócios & Ativos</span>
     </h1>
-
 </header>
 
-
 <div class="portal-grid">
-
-    <a
-        href="precatorios.html"
-        target="_blank"
-        class="nav-card">
-
+    <a href="precatorios.html" target="_blank" class="nav-card">
         <div>
-
-            <h2>
-                RVO Negócios<br>
-                Precatórios
-            </h2>
-
-            <p>
-                Antecipação de créditos judiciais
-                com liquidez imediata.
-            </p>
-
+            <h2>RVO Negócios<br>Precatórios</h2>
+            <p>Antecipação de créditos judiciais com liquidez imediata.</p>
         </div>
-
-        <div class="btn-card">
-            Acesse agora
-        </div>
-
+        <div class="btn-card">Acesse agora</div>
     </a>
 
-
-    <a
-        href="aguarde.html"
-        target="_blank"
-        class="nav-card card-waiting">
-
+    <a href="aguarde.html" target="_blank" class="nav-card card-waiting">
         <div>
-
-            <h2>
-                RVO Negócios<br>
-                Global
-            </h2>
-
-            <p>
-                Atuação estratégica em múltiplos
-                segmentos de negócios.
-            </p>
-
+            <h2>RVO Negócios<br>Global</h2>
+            <p>Atuação estratégica em múltiplos segmentos de negócios.</p>
         </div>
-
-        <div class="btn-card">
-            Aguarde
-        </div>
-
+        <div class="btn-card">Aguarde</div>
     </a>
 
-
-    <a
-        href="aguarde.html"
-        target="_blank"
-        class="nav-card card-waiting">
-
+    <a href="aguarde.html" target="_blank" class="nav-card card-waiting">
         <div>
-
-            <h2>
-                RVO Negócios<br>
-                Terceiro Setor
-            </h2>
-
-            <p>
-                Oportunidades exclusivas num mercado
-                que merece muita atenção.
-            </p>
-
+            <h2>RVO Negócios<br>Terceiro Setor</h2>
+            <p>Oportunidades exclusivas num mercado que merece muita atenção.</p>
         </div>
-
-        <div class="btn-card">
-            Aguarde
-        </div>
-
+        <div class="btn-card">Aguarde</div>
     </a>
-
 </div>
 
-
 <footer>
-
-    &copy; 2011-2026 RVO Negócios |
-    Excelência em Inteligência de Negócios & Ativos<br>
-
+    &copy; 2011-2026 RVO Negócios | Excelência em Inteligência de Negócios & Ativos<br>
     Todos os direitos reservados.<br>
-
     SÃO PAULO | RIO DE JANEIRO | BRASIL
-
 </footer>
 
-
 <script>
-
     /* ==========================================================
        ABERTURA DO VÍDEO
        ========================================================== */
@@ -488,69 +366,35 @@
     const introVideo = document.getElementById("introVideo");
     const enterSite = document.getElementById("enterSite");
 
-
-    /* Esconde a abertura */
-
     function fecharVideo() {
-
         videoIntro.classList.add("video-hidden");
 
-        /*
-         * Libera o scroll depois que a abertura
-         * desaparece.
-         */
         document.body.style.overflowX = "hidden";
         document.body.style.overflowY = "auto";
 
-        /*
-         * Pausa o vídeo depois da transição.
-         */
         setTimeout(function() {
-
             introVideo.pause();
-
         }, 1300);
     }
 
+    /* Esconde a abertura ao terminar o vídeo */
+    introVideo.addEventListener("ended", fecharVideo);
 
-    /* Quando o vídeo terminar */
+    /* Esconde ao clicar no botão "Entrar no site" */
+    enterSite.addEventListener("click", fecharVideo);
 
-    introVideo.addEventListener("ended", function() {
+    /* Execução forçada e segura no carregamento da página */
+    window.addEventListener("DOMContentLoaded", function() {
+        // Força o vídeo a ficar sem som no código para ultrapassar o bloqueio de reprodução automática do browser
+        introVideo.muted = true;
 
-        fecharVideo();
-
+        const playPromise = introVideo.play();
+        if (playPromise !== undefined) {
+            playPromise.catch(function(error) {
+                console.warn("A reprodução automática foi impedida pelo navegador:", error);
+            });
+        }
     });
-
-
-    /* Botão "Entrar no site" */
-
-    enterSite.addEventListener("click", function() {
-
-        fecharVideo();
-
-    });
-
-
-    /*
-     * Garante que o vídeo tente iniciar
-     * automaticamente.
-     */
-
-    window.addEventListener("load", function() {
-
-        introVideo.play().catch(function() {
-
-            /*
-             * Alguns navegadores podem bloquear
-             * a reprodução automática.
-             * Nesse caso, o botão "Entrar no site"
-             * continua disponível.
-             */
-
-        });
-
-    });
-
 
     /* ==========================================================
        BOTÃO VOLTAR AO TOPO
@@ -559,32 +403,20 @@
     const topBtn = document.getElementById("topBtn");
 
     window.onscroll = function() {
-
         if (window.scrollY > 400) {
-
             topBtn.classList.add("show");
-
         } else {
-
             topBtn.classList.remove("show");
-
         }
-
     };
 
-
     function voltarAoTopo() {
-
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
         });
-
     }
-
 </script>
-
 
 </body>
 </html>
-```
