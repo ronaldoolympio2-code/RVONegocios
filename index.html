@@ -37,7 +37,6 @@
             min-height: 100vh;
         }
 
-        /* Bloqueia o scroll enquanto o vídeo estiver ativo */
         body.no-scroll {
             overflow: hidden !important;
         }
@@ -49,9 +48,9 @@
         #videoIntro {
             position: fixed;
             inset: 0;
-            width: 100%;
-            height: 100%;
-            background: #000;
+            width: 100vw;
+            height: 100vh;
+            background: #0b1120;
             z-index: 99999;
             display: flex;
             align-items: center;
@@ -69,6 +68,9 @@
         }
 
         #introVideo {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -301,13 +303,11 @@
 <div id="videoIntro">
     <video
         id="introVideo"
+        src="RVO_LOGO_ANIMADA_HORIZONTAL_ANIMADO.mp4"
         autoplay
         muted
-        loop
         playsinline
         preload="auto">
-        <source src="RVO_LOGO_ANIMADA_HORIZONTAL_SILENCIADO.mp4" type="video/mp4">
-        Seu navegador não suporta vídeos HTML5.
     </video>
 
     <button id="enterSite">Entrar no site</button>
@@ -366,7 +366,6 @@
     const introVideo = document.getElementById("introVideo");
     const enterSite = document.getElementById("enterSite");
 
-    /* Função que abre o site exclusivamente quando o usuário clica */
     function fecharVideo() {
         videoIntro.classList.add("video-hidden");
         document.body.classList.remove("no-scroll");
@@ -376,18 +375,15 @@
         }, 1300);
     }
 
-    /* O site SÓ abre quando clicar no botão */
+    /* O site só libera após o clique no botão */
     enterSite.addEventListener("click", fecharVideo);
 
-    /* Execução contínua do vídeo na abertura */
-    window.addEventListener("DOMContentLoaded", function() {
+    /* Executa o vídeo apenas 1 vez ao carregar a página */
+    window.addEventListener("load", function() {
         introVideo.muted = true;
-        const playPromise = introVideo.play();
-        if (playPromise !== undefined) {
-            playPromise.catch(function(error) {
-                console.warn("Autoplay bloqueado pelo navegador:", error);
-            });
-        }
+        introVideo.play().catch(function(err) {
+            console.log("Aguardando interação do usuário para vídeo:", err);
+        });
     });
 
     /* BOTÃO VOLTAR AO TOPO */
