@@ -77,6 +77,20 @@
             display: block;
         }
 
+        /* Ajuste específico para celulares / telas verticais */
+        @media (max-width: 768px) {
+            #introVideo {
+                object-fit: contain; /* Mostra o vídeo inteiro sem cortar as bordas no celular */
+            }
+
+            #enterSite {
+                bottom: 25px !important;
+                padding: 12px 24px !important;
+                font-size: 11px !important;
+                letter-spacing: 2px !important;
+            }
+        }
+
         /* Botão para entrar no site */
         #enterSite {
             position: absolute;
@@ -267,7 +281,7 @@
             visibility: visible;
         }
 
-        /* RESPONSIVIDADE */
+        /* RESPONSIVIDADE PARA O PORTAL DENTRO DO SITE */
         @media (max-width: 1024px) {
             .portal-grid {
                 grid-template-columns: 1fr;
