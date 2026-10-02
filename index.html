@@ -77,12 +77,8 @@
             display: block;
         }
 
-        /* Ajuste específico para celulares / telas verticais */
+        /* Ajustes de estilo do botão para celular */
         @media (max-width: 768px) {
-            #introVideo {
-                object-fit: contain; /* Mostra o vídeo inteiro sem cortar as bordas no celular */
-            }
-
             #enterSite {
                 bottom: 25px !important;
                 padding: 12px 24px !important;
@@ -317,7 +313,6 @@
 <div id="videoIntro">
     <video
         id="introVideo"
-        src="RVO_LOGO_ANIMADA_HORIZONTAL_SILENCIADO.mp4"
         autoplay
         muted
         playsinline
@@ -386,19 +381,30 @@
 
         setTimeout(function() {
             introVideo.pause();
-        }, 1300);
+        }, 1200);
     }
 
-    /* O site só libera após o clique no botão */
-    enterSite.addEventListener("click", fecharVideo);
-
-    /* Executa o vídeo apenas 1 vez ao carregar a página */
+    /* Define a fonte do vídeo com base na largura do dispositivo ao carregar */
     window.addEventListener("load", function() {
+        const isMobile = window.innerWidth <= 768;
+
+        if (isMobile) {
+            introVideo.src = "RVO_LOGO_VERTICAL_CELULAR.mp4"; // Vídeo vertical para celulares
+        } else {
+            introVideo.src = "RVO_LOGO_ANIMADA_HORIZONTAL_SILENCIADO.mp4"; // Vídeo horizontal para desktop
+        }
+
         introVideo.muted = true;
         introVideo.play().catch(function(err) {
-            console.log("Aguardando interação do usuário para vídeo:", err);
+            console.log("Autoplay impedido pelo navegador:", err);
         });
+
+        // Fecha a intro automaticamente ao fim da reprodução do vídeo
+        introVideo.addEventListener("ended", fecharVideo);
     });
+
+    /* Permite o fechamento manual pelo botão */
+    enterSite.addEventListener("click", fecharVideo);
 
     /* BOTÃO VOLTAR AO TOPO */
     const topBtn = document.getElementById("topBtn");
