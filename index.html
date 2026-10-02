@@ -51,7 +51,7 @@
             width: 100vw;
             height: 100vh;
             background: #0b1120;
-            z-index: 99999;
+            z-index: 999999;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -75,26 +75,17 @@
             height: 100%;
             object-fit: cover;
             display: block;
+            z-index: 1;
         }
 
-        /* Ajustes de estilo do botão para celular */
-        @media (max-width: 768px) {
-            #enterSite {
-                bottom: 25px !important;
-                padding: 12px 24px !important;
-                font-size: 11px !important;
-                letter-spacing: 2px !important;
-            }
-        }
-
-        /* Botão para entrar no site */
+        /* Botão para entrar no site (Garantido em frente ao vídeo) */
         #enterSite {
             position: absolute;
             bottom: 40px;
             left: 50%;
             transform: translateX(-50%);
             padding: 16px 32px;
-            background: rgba(11, 17, 32, 0.85);
+            background: rgba(11, 17, 32, 0.9);
             border: 2px solid #c9a961;
             color: #c9a961;
             font-family: 'Inter', sans-serif;
@@ -106,16 +97,30 @@
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             transition: all 0.35s ease;
-            z-index: 100000;
+            z-index: 1000000; /* Z-Index elevado para garantir clique no celular */
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+            -webkit-tap-highlight-color: transparent;
         }
 
-        #enterSite:hover {
+        #enterSite:hover, #enterSite:active {
             background: #c9a961;
             color: #000;
             border-color: #c9a961;
             transform: translateX(-50%) translateY(-3px);
             box-shadow: 0 0 25px rgba(201, 169, 97, 0.6);
+        }
+
+        /* Ajustes específicos de posição do botão para dispositivos móveis */
+        @media (max-width: 768px) {
+            #enterSite {
+                bottom: 35px;
+                padding: 14px 28px;
+                font-size: 12px;
+                letter-spacing: 2px;
+                width: 80%;
+                max-width: 280px;
+                text-align: center;
+            }
         }
 
         /* FUNDO COM GRADIENTE SUTIL */
@@ -384,24 +389,28 @@
         }, 1200);
     }
 
-    /* Define o vídeo correto de acordo com a tela do usuário */
+    /* Define o vídeo correto de acordo com o tamanho da tela */
     window.addEventListener("load", function() {
         const isMobile = window.innerWidth <= 768;
 
         if (isMobile) {
-            introVideo.src = "RVO_LOGO_VERTICAL_CELULAR.mp4"; // Vídeo vertical para celular
+            introVideo.src = "RVO_LOGO_VERTICAL_CELULAR.mp4"; // Vídeo vertical para mobile
         } else {
             introVideo.src = "RVO_LOGO_ANIMADA_HORIZONTAL_SILENCIADO.mp4"; // Vídeo horizontal para desktop
         }
 
         introVideo.muted = true;
         introVideo.play().catch(function(err) {
-            console.log("Autoplay impedido pelo navegador:", err);
+            console.log("Autoplay bloqueado pelo navegador:", err);
         });
     });
 
-    /* O site SÓ LIBERA ao clicar no botão em qualquer dispositivo */
+    /* O site SÓ LIBERA ao clicar ou tocar no botão */
     enterSite.addEventListener("click", fecharVideo);
+    enterSite.addEventListener("touchstart", function(e) {
+        e.preventDefault();
+        fecharVideo();
+    });
 
     /* BOTÃO VOLTAR AO TOPO */
     const topBtn = document.getElementById("topBtn");
