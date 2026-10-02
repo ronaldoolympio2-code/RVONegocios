@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>RVO Negócios | Excelência em Inteligência de Negócios & Ativos</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
@@ -47,11 +47,13 @@
 
         #videoIntro {
             position: fixed;
-            inset: 0;
+            top: 0;
+            left: 0;
             width: 100vw;
             height: 100vh;
+            height: 100dvh; /* Altura exata para telas de celulares */
             background: #0b1120;
-            z-index: 999999;
+            z-index: 9999999;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -78,48 +80,50 @@
             z-index: 1;
         }
 
-        /* Botão para entrar no site (Garantido em frente ao vídeo) */
+        /* BOTÃO ENTRAR NO SITE (FIXO E VISÍVEL) */
         #enterSite {
-            position: absolute;
-            bottom: 40px;
+            position: fixed;
+            bottom: 80px;
             left: 50%;
             transform: translateX(-50%);
             padding: 16px 32px;
-            background: rgba(11, 17, 32, 0.9);
+            background: #0b1120; /* Fundo sólido escuro para dar contraste sobre o vídeo claro */
             border: 2px solid #c9a961;
             color: #c9a961;
             font-family: 'Inter', sans-serif;
             font-size: 13px;
-            font-weight: 600;
+            font-weight: 700;
             letter-spacing: 3px;
             text-transform: uppercase;
             cursor: pointer;
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            transition: all 0.35s ease;
-            z-index: 1000000; /* Z-Index elevado para garantir clique no celular */
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+            z-index: 10000000; /* Garante que fique acima de todas as camadas */
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.9);
             -webkit-tap-highlight-color: transparent;
+            white-space: nowrap;
+            transition: all 0.35s ease;
         }
 
         #enterSite:hover, #enterSite:active {
             background: #c9a961;
-            color: #000;
+            color: #000000;
             border-color: #c9a961;
             transform: translateX(-50%) translateY(-3px);
-            box-shadow: 0 0 25px rgba(201, 169, 97, 0.6);
+            box-shadow: 0 0 30px rgba(201, 169, 97, 0.8);
         }
 
-        /* Ajustes específicos de posição do botão para dispositivos móveis */
+        /* Ajustes específicos para celular */
         @media (max-width: 768px) {
+            #introVideo {
+                object-fit: cover;
+            }
+
             #enterSite {
-                bottom: 35px;
-                padding: 14px 28px;
-                font-size: 12px;
-                letter-spacing: 2px;
+                bottom: 100px !important; /* Posição elevada para não cobrir na barra do browser */
                 width: 80%;
-                max-width: 280px;
+                max-width: 260px;
                 text-align: center;
+                padding: 14px 20px !important;
+                font-size: 12px !important;
             }
         }
 
@@ -389,7 +393,7 @@
         }, 1200);
     }
 
-    /* Define o vídeo correto de acordo com o tamanho da tela */
+    /* Define o vídeo correto de acordo com a tela do usuário */
     window.addEventListener("load", function() {
         const isMobile = window.innerWidth <= 768;
 
@@ -405,7 +409,7 @@
         });
     });
 
-    /* O site SÓ LIBERA ao clicar ou tocar no botão */
+    /* Libera o site ao clicar ou tocar no botão */
     enterSite.addEventListener("click", fecharVideo);
     enterSite.addEventListener("touchstart", function(e) {
         e.preventDefault();
