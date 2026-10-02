@@ -384,12 +384,12 @@
         }, 1200);
     }
 
-    /* Define a fonte do vídeo com base na largura do dispositivo ao carregar */
+    /* Define o vídeo correto de acordo com a tela do usuário */
     window.addEventListener("load", function() {
         const isMobile = window.innerWidth <= 768;
 
         if (isMobile) {
-            introVideo.src = "RVO_LOGO_VERTICAL_CELULAR.mp4"; // Vídeo vertical para celulares
+            introVideo.src = "RVO_LOGO_VERTICAL_CELULAR.mp4"; // Vídeo vertical para celular
         } else {
             introVideo.src = "RVO_LOGO_ANIMADA_HORIZONTAL_SILENCIADO.mp4"; // Vídeo horizontal para desktop
         }
@@ -398,12 +398,9 @@
         introVideo.play().catch(function(err) {
             console.log("Autoplay impedido pelo navegador:", err);
         });
-
-        // Fecha a intro automaticamente ao fim da reprodução do vídeo
-        introVideo.addEventListener("ended", fecharVideo);
     });
 
-    /* Permite o fechamento manual pelo botão */
+    /* O site SÓ LIBERA ao clicar no botão em qualquer dispositivo */
     enterSite.addEventListener("click", fecharVideo);
 
     /* BOTÃO VOLTAR AO TOPO */
